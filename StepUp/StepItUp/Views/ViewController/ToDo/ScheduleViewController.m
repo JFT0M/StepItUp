@@ -45,7 +45,8 @@
     }
     self.calendarMenuView.backgroundColor =[UIColor clearColor];
     self.calendarContentView.backgroundColor = [UIColor clearColor];
-    self.backView.backgroundColor = [UIColor clearColor];
+    
+    self.backView.backgroundColor = [UIColor grayColor];
     [self.calendar setMenuMonthsView:self.calendarMenuView];
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
