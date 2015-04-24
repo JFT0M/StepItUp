@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"主页_01"];
     
     [self initScheduleTable];
     self.calendar = [JTCalendar new];
