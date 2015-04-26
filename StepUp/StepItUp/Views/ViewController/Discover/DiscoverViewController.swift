@@ -8,17 +8,19 @@
 
 import UIKit
 
+
 class DiscoverViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,24 +33,41 @@ class DiscoverViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        switch section{
+            case 0:
+                return 2;
+            case 1:
+                return 1;
+            case 2:
+                return 4;
+            default:
+                return 0;
+        }
+       
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+        let MyCellIdentifier = "MeSelectCell"
+        var cell:MeSelectCell? = tableView .dequeueReusableCellWithIdentifier(MyCellIdentifier) as? MeSelectCell
+        if cell == nil {
+            var topLevelObjects:NSArray = NSBundle.mainBundle().loadNibNamed("MeSelectCell", owner: nil, options: nil)
+            for   currentObject in topLevelObjects{
+                if currentObject.isKindOfClass(MeSelectCell.classForCoder()){
+                    cell = currentObject as MeSelectCell;
+                    break;
+                }
+            }
+        }
+        return cell!;
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
