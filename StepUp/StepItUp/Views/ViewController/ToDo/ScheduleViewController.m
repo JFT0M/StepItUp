@@ -211,7 +211,14 @@
 //改变模式按钮响应
 - (void)didChangeModeTouch:(id)sender
 {
+    //更换按钮图片
+    if (self.calendar.calendarAppearance.isWeekMode == true) {
+        [self.changeDateBtn setImage:[UIImage imageNamed:@"multiply_down"] forState:UIControlStateNormal];
+    }else{
+        [self.changeDateBtn setImage:[UIImage imageNamed:@"multiply_up"] forState:UIControlStateNormal];
+    }
     self.calendar.calendarAppearance.isWeekMode = !self.calendar.calendarAppearance.isWeekMode;
+    
     [self transitionExample];
 }
 
@@ -221,7 +228,7 @@
 
 
 #pragma mark - Propertys
-#pragma mark 弹出按钮
+#pragma mark 添加按钮（popMenu）
 - (XHPopMenu *)popMenu {
     if (!_popMenu) {
         NSMutableArray *popMenuItems = [[NSMutableArray alloc] initWithCapacity:3];
@@ -264,7 +271,7 @@
 #pragma mark 分类弹出按钮
 -(void)createDWBubbleMenuButton{
     // Create up menu button
-    UIButton *homeLabel = [self createHomeButtonView];
+    UIImageView *homeLabel = [self createHomeButtonView];
     
     DWBubbleMenuButton *upMenuView = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - homeLabel.frame.size.width - 20.f,
                                                                                           self.view.frame.size.height - homeLabel.frame.size.height - 60.f,
@@ -277,10 +284,10 @@
     
     [self.view addSubview:upMenuView];
 }
-- (UIButton *)createHomeButtonView {
-    UIButton *homeView = [[UIButton alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 40.f)];
-    
-    [homeView setImage:[UIImage imageNamed:@"multply_button_main"] forState:UIControlStateNormal];
+- (UIImageView *)createHomeButtonView {
+    UIImageView *homeView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 40.f)];
+    [homeView setImage:[UIImage imageNamed:@"multiply_float__touch"]];
+    //homeView.backgroundColor = [UIColor blackColor];
     //homeView.layer.cornerRadius = homeView.frame.size.height / 2.f;
     //homeView.backgroundColor =[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
     //homeView.clipsToBounds = YES;
@@ -291,16 +298,10 @@
     NSMutableArray *buttonsMutable = [[NSMutableArray alloc] init];
     
     int i = 0;
-    for (NSString *title in @[@"A", @"B", @"C", @"D", @"E", @"F"]) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    for (NSString *imageName in @[@"multipy_float__all", @"multipy_float__calendar", @"multipy_float__sort"]) {
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setTitle:title forState:UIControlStateNormal];
-        
-        button.frame = CGRectMake(0.f, 0.f, 30.f, 30.f);
-        button.layer.cornerRadius = button.frame.size.height / 2.f;
-        button.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
-        button.clipsToBounds = YES;
         button.tag = i++;
         
         [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
@@ -313,6 +314,19 @@
 
 - (void)test:(UIButton *)sender {
     NSLog(@"Button tapped, tag: %ld", (long)sender.tag);
+    switch (sender.tag) {
+        case 0:
+            //显示所有
+            break;
+        case 1:
+            //显示日历模式
+            break;
+        case 2:
+            //显示分类
+            break;
+        default:
+            break;
+    }
 }
 
 - (UIButton *)createButtonWithName:(NSString *)imageName {
