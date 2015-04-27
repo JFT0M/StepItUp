@@ -17,9 +17,14 @@ static CGFloat kEndPoint = 1.5;
 {
     [super awakeFromNib];
     if (self.color) {
+        //在SIUToDoSB.storyboard 中 建立 color——Color——(r,g,b)的键值对就可以设置不同的顶栏颜色
         [self setNavigationBarWithColor:self.color];
     } else {
-        [self setNavigationBarWithColor:[UIColor whiteColor]];
+        //[self setNavigationBarWithColor:[UIColor whiteColor]];
+        //[self setTintColor:[UIColor whiteColor]];
+        //[self setBarStyle:UIBarStyleDefault];
+        UIImage *image = [UIImage imageNamed:@"multiply_banner_01"];
+        [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     }
 }
 

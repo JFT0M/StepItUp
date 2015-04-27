@@ -12,10 +12,10 @@
                 <tabBarController title="MainTabBar" id="BCz-VA-3U7" customClass="MainTabBarViewController" customModule="StepUp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9lP-dC-OFP"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" backgroundImage="tar_bar_bg" id="rE6-67-oVG">
+                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" id="rE6-67-oVG">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVU-gF-M6A" sceneMemberID="firstResponder"/>
@@ -178,10 +178,7 @@
             <point key="canvasLocation" x="-1155" y="35"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="tar_bar_bg" width="332" height="167"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RmD-XE-vVR"/>
+        <segue reference="bxY-pM-vxd"/>
     </inferredMetricsTieBreakers>
 </document>
