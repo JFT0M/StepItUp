@@ -178,8 +178,9 @@
 //    self.navigationItem.leftBarButtonItems = leftButtons;
 //    
 //    
-//    //add Button
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showMenuOnView:)];
+    //add Button
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showMenuOnView:)];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
     
     //这是新版本
     UIButton * title = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -212,7 +213,7 @@
 - (void)didChangeModeTouch:(id)sender
 {
     //更换按钮图片
-    if (self.calendar.calendarAppearance.isWeekMode == true) {
+    if (self.calendar.calendarAppearance.isWeekMode == false) {
         [self.changeDateBtn setImage:[UIImage imageNamed:@"multiply_down"] forState:UIControlStateNormal];
     }else{
         [self.changeDateBtn setImage:[UIImage imageNamed:@"multiply_up"] forState:UIControlStateNormal];
