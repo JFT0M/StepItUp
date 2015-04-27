@@ -13,6 +13,8 @@ class MainTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.barTintColor = UIColor.blackColor()
+        self.tabBar.tintColor = UIColor.whiteColor()
         loadAllViewController()
     }
     
@@ -23,25 +25,27 @@ class MainTabBarViewController: UITabBarController {
     }
     
     func loadAllViewController(){
+        
+        
         var planViewController = UIStoryboard(name: "SIUToDoSB", bundle: nil).instantiateInitialViewController() as UINavigationController
-        planViewController.tabBarItem.image = UIImage(named: "icon_clock_normal")
-        planViewController.tabBarItem.selectedImage = UIImage(named:"icon_clock_selected")
+        planViewController.tabBarItem.image = UIImage(named: "multiply_button__calendar")
         planViewController.tabBarItem.title = "日程"
         
+        
         var GroupViewController = UIStoryboard(name: "SIUGroupSB", bundle: nil).instantiateInitialViewController() as UINavigationController
-        GroupViewController.tabBarItem.image = UIImage(named: "001")
-        GroupViewController.tabBarItem.selectedImage = UIImage(named:"002")
+        GroupViewController.tabBarItem.image = UIImage(named: "multiply_button__group")
         GroupViewController.tabBarItem.title = "群组"
         
+        
+        
         var dynamicViewController = UIStoryboard(name: "SIUDiscoverSB", bundle: nil).instantiateInitialViewController() as UINavigationController
-        dynamicViewController.tabBarItem.image = UIImage(named: "001")
-        dynamicViewController.tabBarItem.selectedImage = UIImage(named:"002")
+        dynamicViewController.tabBarItem.image = UIImage(named: "multiply_button__find")
         dynamicViewController.tabBarItem.title = "发现"
         
         var meViewController = UIStoryboard(name: "SIUMeSB", bundle: nil).instantiateInitialViewController() as UINavigationController
-        meViewController.tabBarItem.image = UIImage(named: "001")
-        meViewController.tabBarItem.selectedImage = UIImage(named:"002")
+        meViewController.tabBarItem.image = UIImage(named: "multiply_button__personal")
         meViewController.tabBarItem.title = "账号"
+        
         
         //        var contactViewController = UIStoryboard(name: "SIUContactSB", bundle: nil).instantiateInitialViewController() as UINavigationController
         //        contactViewController.tabBarItem.image = UIImage(named: "001")

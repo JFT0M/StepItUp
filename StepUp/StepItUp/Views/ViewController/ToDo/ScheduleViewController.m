@@ -12,9 +12,10 @@
 #import "XHPopMenu.h"
 #import "LKAlarmMamager.h"
 #import "ReminderCell.h"
+#import "DWBubbleMenuButton.h"
 
 #define kDefaultAnimationDuration 0.25f
-
+#define FontSize 23.0f
 
 @interface ScheduleViewController (){
     NSMutableDictionary *eventsByDate;
@@ -31,8 +32,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.backIndicatorImage = [UIImage imageNamed:@"主页_01"];
+    [self setFontFamily:@"FagoOfficeSans-Regular" forView:self.view andSubViews:YES];
     
+    //添加日历阴影
+    CALayer * calendarLayer = self.calendarContentView.superview.layer;
+    //layer.cornerRadius=10;
+    calendarLayer.shadowColor=[UIColor blackColor].CGColor;
+    //偏移量
+    calendarLayer.shadowOffset=CGSizeMake(0, 2);
+    calendarLayer.shadowOpacity=0.5;
+    calendarLayer.shadowRadius=3;
+    //calendarLayer.shadowPath
+    
+    //添加按钮阴影效果
+    CALayer *changeDateBtnLayer = self.changeDateBtn.layer;
+    changeDateBtnLayer.shadowColor=[UIColor blackColor].CGColor;
+    //偏移量
+    changeDateBtnLayer.shadowOffset=CGSizeMake(0, 2);
+    changeDateBtnLayer.shadowOpacity=0.5;
+    changeDateBtnLayer.shadowRadius=3;
+    
+    
+    //添加 changeDateBtn 响应事件
+    [self.changeDateBtn addTarget:self action:@selector(didChangeModeTouch:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //添加分类按钮
+    [self createDWBubbleMenuButton];
+    
+    
+    
+    
+    //设置导航栏
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    
+    //设置日程列表
     [self initScheduleTable];
     self.calendar = [JTCalendar new];
     //self.is_hiden = NO;
@@ -46,7 +80,7 @@
     self.calendarMenuView.backgroundColor =[UIColor clearColor];
     self.calendarContentView.backgroundColor = [UIColor clearColor];
     
-    self.backView.backgroundColor = [UIColor grayColor];
+    self.backView.backgroundColor = [[UIColor alloc]initWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
     [self.calendar setMenuMonthsView:self.calendarMenuView];
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
@@ -127,25 +161,34 @@
 
 #pragma mark - 初始化导航
 -(void)initMyNaviItem{
+//这是旧版本
+//    //today button
+//    UIButton *myTodayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    myTodayButton.frame=CGRectMake(0, 0, 30, 30);
+//    [myTodayButton setTitle:@"today" forState:UIControlStateNormal];
+//    [myTodayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    [myTodayButton addTarget:self action:@selector(didGoTodayTouch:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    self.navigationItem.titleView = myTodayButton;
+//    
+//    //change button
+//    UIBarButtonItem *changeButton = [[UIBarButtonItem alloc]initWithTitle:@"Change" style:UIBarButtonItemStyleDone target:self action:@selector(didChangeModeTouch:)];
+//    NSMutableArray * leftButtons = [[NSMutableArray alloc]init];
+//    [leftButtons addObject:changeButton];
+//    self.navigationItem.leftBarButtonItems = leftButtons;
+//    
+//    
+//    //add Button
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showMenuOnView:)];
     
-    //today button
-    UIButton *myTodayButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    myTodayButton.frame=CGRectMake(0, 0, 30, 30);
-    [myTodayButton setTitle:@"today" forState:UIControlStateNormal];
-    [myTodayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [myTodayButton addTarget:self action:@selector(didGoTodayTouch:) forControlEvents:UIControlEventTouchUpInside];
+    //这是新版本
+    UIButton * title = [UIButton buttonWithType:UIButtonTypeSystem];
+    title.titleLabel.font = [UIFont systemFontOfSize:FontSize];
+    [title setTitle:@"日程" forState:UIControlStateNormal];
+    [title setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [title setTintColor:[UIColor whiteColor]];
+    self.navigationItem.titleView = title;
     
-    self.navigationItem.titleView = myTodayButton;
-    
-    //change button
-    UIBarButtonItem *changeButton = [[UIBarButtonItem alloc]initWithTitle:@"Change" style:UIBarButtonItemStyleDone target:self action:@selector(didChangeModeTouch:)];
-    NSMutableArray * leftButtons = [[NSMutableArray alloc]init];
-    [leftButtons addObject:changeButton];
-    self.navigationItem.leftBarButtonItems = leftButtons;
-    
-    
-    //add Button
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showMenuOnView:)];
     
 }
 
@@ -155,6 +198,9 @@
     self.navigationItem.leftBarButtonItems = nil;
     self.navigationItem.rightBarButtonItem = nil;
 }
+
+
+
 #pragma mark - Buttons callback
 //今天按钮响应
 - (void)didGoTodayTouch:(id)sender
@@ -172,6 +218,8 @@
 - (void)showMenuOnView:(UIBarButtonItem *)buttonItem {
     [self.popMenu showMenuOnView:self.view atPoint:CGPointZero];
 }
+
+
 #pragma mark - Propertys
 #pragma mark 弹出按钮
 - (XHPopMenu *)popMenu {
@@ -213,7 +261,69 @@
     return _popMenu;
 }
 
+#pragma mark 分类弹出按钮
+-(void)createDWBubbleMenuButton{
+    // Create up menu button
+    UIButton *homeLabel = [self createHomeButtonView];
+    
+    DWBubbleMenuButton *upMenuView = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - homeLabel.frame.size.width - 20.f,
+                                                                                          self.view.frame.size.height - homeLabel.frame.size.height - 60.f,
+                                                                                          homeLabel.frame.size.width,
+                                                                                          homeLabel.frame.size.height)
+                                                            expansionDirection:DirectionUp];
+    upMenuView.homeButtonView = homeLabel;
+    
+    [upMenuView addButtons:[self createDemoButtonArray]];
+    
+    [self.view addSubview:upMenuView];
+}
+- (UIButton *)createHomeButtonView {
+    UIButton *homeView = [[UIButton alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 40.f)];
+    
+    [homeView setImage:[UIImage imageNamed:@"multply_button_main"] forState:UIControlStateNormal];
+    //homeView.layer.cornerRadius = homeView.frame.size.height / 2.f;
+    //homeView.backgroundColor =[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
+    //homeView.clipsToBounds = YES;
+    
+    return homeView;
+}
+- (NSArray *)createDemoButtonArray {
+    NSMutableArray *buttonsMutable = [[NSMutableArray alloc] init];
+    
+    int i = 0;
+    for (NSString *title in @[@"A", @"B", @"C", @"D", @"E", @"F"]) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitle:title forState:UIControlStateNormal];
+        
+        button.frame = CGRectMake(0.f, 0.f, 30.f, 30.f);
+        button.layer.cornerRadius = button.frame.size.height / 2.f;
+        button.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
+        button.clipsToBounds = YES;
+        button.tag = i++;
+        
+        [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [buttonsMutable addObject:button];
+    }
+    
+    return [buttonsMutable copy];
+}
 
+- (void)test:(UIButton *)sender {
+    NSLog(@"Button tapped, tag: %ld", (long)sender.tag);
+}
+
+- (UIButton *)createButtonWithName:(NSString *)imageName {
+    UIButton *button = [[UIButton alloc] init];
+    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button sizeToFit];
+    
+    [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return button;
+}
 
 
 
@@ -369,8 +479,28 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [self deleteMyNaviItem];
 }
-
+#pragma mark - 页面跳转
 - (void)pushNewViewController:(UIViewController *)newViewController {
     [self.navigationController pushViewController:newViewController animated:YES];
 }
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+-(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews
+{
+    if ([view isKindOfClass:[UILabel class]])
+    {
+        UILabel *lbl = (UILabel *)view;
+        [lbl setFont:[UIFont fontWithName:fontFamily size:[[lbl font] pointSize]]];
+    }
+    if (isSubViews)
+    {
+        for (UIView *sview in view.subviews)
+        {
+            [self setFontFamily:fontFamily forView:sview andSubViews:YES];
+        }
+    }
+}
+
 @end

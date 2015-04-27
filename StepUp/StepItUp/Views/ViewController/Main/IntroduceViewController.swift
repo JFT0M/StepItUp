@@ -16,6 +16,11 @@ class IntroduceViewController: UIViewController,ABCIntroViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        //MARK: 测试的时候用来跳过导航页面
+        self.performSegueWithIdentifier("goMainViewController", sender: self)
+        
+        
 //        let isIntroScreenLoad = defaults.objectForKey("intro_screen_viewed") as? NSString
 //        if (isIntroScreenLoad != "YES"){
 //            introView = ABCIntroView(frame: self.view.frame)
@@ -55,6 +60,9 @@ class IntroduceViewController: UIViewController,ABCIntroViewDelegate {
         self.performSegueWithIdentifier("goMainViewController", sender: self)
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle{
+        return UIStatusBarStyle.LightContent
+    }
 
     /*
     // MARK: - Navigation

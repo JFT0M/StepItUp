@@ -20,11 +20,6 @@
                             <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </textAttributes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="cNI-0S-kUP" kind="relationship" relationship="rootViewController" id="9j7-1k-G6Q"/>
@@ -109,9 +104,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Ha7-Km-aID">
-                                <rect key="frame" x="-14" y="0.0" width="628" height="600"/>
-                            </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyt-R7-UOD" userLabel="CalenderView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="288"/>
                                 <subviews>
@@ -172,32 +164,35 @@
                                     <outlet property="delegate" destination="cNI-0S-kUP" id="Jlm-Yn-aJO"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rr-Zg-mDk" userLabel="changeDateButton">
+                                <rect key="frame" x="271" y="352" width="58" height="22"/>
+                                <state key="normal" image="multiply_down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TEZ-kg-PYz" firstAttribute="leading" secondItem="F5y-OT-Fvf" secondAttribute="leadingMargin" constant="-16" id="E3h-nc-YPs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ha7-Km-aID" secondAttribute="trailing" constant="-30" id="F8D-ae-tzy"/>
-                            <constraint firstItem="Ha7-Km-aID" firstAttribute="top" secondItem="F5y-OT-Fvf" secondAttribute="topMargin" id="Gyz-jS-fGw"/>
+                            <constraint firstItem="2rr-Zg-mDk" firstAttribute="top" secondItem="Lyt-R7-UOD" secondAttribute="bottom" id="IO8-wc-hsT"/>
                             <constraint firstItem="TEZ-kg-PYz" firstAttribute="top" secondItem="Lyt-R7-UOD" secondAttribute="bottom" id="JrJ-3X-fXm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TEZ-kg-PYz" secondAttribute="trailing" constant="-16" id="KV7-7r-DRF"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Ha7-Km-aID" secondAttribute="bottom" id="Qjp-Zx-1bD"/>
+                            <constraint firstAttribute="centerX" secondItem="2rr-Zg-mDk" secondAttribute="centerX" id="LIl-9I-nnW"/>
                             <constraint firstAttribute="trailing" secondItem="Lyt-R7-UOD" secondAttribute="trailing" id="Wyp-Bk-mNo"/>
-                            <constraint firstItem="Ha7-Km-aID" firstAttribute="leading" secondItem="F5y-OT-Fvf" secondAttribute="leadingMargin" constant="-30" id="Y2N-Tp-iGo"/>
                             <constraint firstItem="Lyt-R7-UOD" firstAttribute="top" secondItem="2Su-51-KlE" secondAttribute="bottom" id="YUr-xY-4fk"/>
                             <constraint firstItem="Lyt-R7-UOD" firstAttribute="leading" secondItem="F5y-OT-Fvf" secondAttribute="leading" id="o3O-bf-eLn"/>
                             <constraint firstAttribute="bottomMargin" secondItem="TEZ-kg-PYz" secondAttribute="bottom" id="vIz-EE-Pqi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="日程" image="003" id="1Aq-Ws-s3g"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="pK6-BD-wop"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backView" destination="Lyt-R7-UOD" id="eRw-BL-B6I"/>
                         <outlet property="backViewHeight" destination="tCF-NS-VBt" id="1r9-bS-yCT"/>
                         <outlet property="calendarContentView" destination="e2T-ES-yVe" id="o4F-VJ-DOU"/>
                         <outlet property="calendarContentViewHeight" destination="aEs-hl-8nL" id="LvU-Kv-YIw"/>
                         <outlet property="calendarMenuView" destination="hlc-AA-dMG" id="L5R-OQ-c7A"/>
+                        <outlet property="changeDateBtn" destination="2rr-Zg-mDk" id="AzH-Gy-1fe"/>
                         <outlet property="tableView" destination="TEZ-kg-PYz" id="8mQ-gr-MY9"/>
                         <segue destination="7d1-iK-nC5" kind="show" identifier="showPlanSegue" id="kac-AU-gYh"/>
                         <segue destination="Ly8-zj-xFH" kind="showDetail" identifier="createSchedule" id="sw0-HC-XI5"/>
@@ -254,7 +249,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="003" width="30" height="30"/>
-        <image name="bg" width="664" height="1000"/>
+        <image name="multiply_down" width="58" height="20"/>
     </resources>
 </document>

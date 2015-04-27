@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *backViewHeight;
 @property (weak, nonatomic) IBOutlet UIView *backView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *changeDateBtn;
 
 // The duration of the expand/collapse animation
 @property (nonatomic) float animationDuration;
@@ -31,8 +32,6 @@
 //@property (assign, nonatomic) BOOL is_hiden;
 
 @property (strong, nonatomic) JTCalendar *calendar;
-
-
 
 //-(void)HidenView;//隐藏左边的日历（修改日历的bug）
 //-(void)ShowView;//显示左边的日历（修改日历的bug）
