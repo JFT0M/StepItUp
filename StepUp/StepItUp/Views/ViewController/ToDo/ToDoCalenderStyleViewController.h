@@ -10,7 +10,7 @@
 
 #import "JTCalendar.h"
 
-@interface ScheduleViewController : UIViewController<JTCalendarDataSource,UITableViewDataSource,UITableViewDelegate>
+@interface ToDoCalenderStyleViewController : UIViewController<JTCalendarDataSource,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTCalendarContentView *calendarContentView;

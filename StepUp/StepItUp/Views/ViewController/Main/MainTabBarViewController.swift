@@ -27,7 +27,7 @@ class MainTabBarViewController: UITabBarController {
     func loadAllViewController(){
         
         
-        var planViewController = UIStoryboard(name: "SIUToDoSB", bundle: nil).instantiateInitialViewController() as UINavigationController
+        var planViewController = UIStoryboard(name: "SIUToDoSB", bundle: nil).instantiateInitialViewController() as UITabBarController
         planViewController.tabBarItem.image = UIImage(named: "multiply_button__calendar")
         planViewController.tabBarItem.title = "日程"
         
