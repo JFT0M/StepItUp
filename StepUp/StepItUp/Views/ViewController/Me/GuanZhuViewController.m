@@ -8,7 +8,7 @@
 
 #import "GuanZhuViewController.h"
 #import "MeFensiCell.h"
-
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 @interface GuanZhuViewController ()
 
 @end
@@ -57,6 +57,8 @@
     MeFensiCell *cell = [MeFensiCell cellWithTableView:tableView];
     
     [cell setData:nil name:@"我的一dfdf号" sex:1 shoushou:nil];
+    
+    cell.sixin.frame = CGRectMake(SCREEN_WIDTH-cell.sixin.frame.size.width-15, (cell.frame.size.height-cell.sixin.frame.size.height)/2, cell.sixin.frame.size.width, cell.sixin.frame.size.height);
     
 //    
 //    NSLog(@"@@@@@@@@@name.x: %f, name.y: %f, name.width: %f, name.heignt: %f",cell.sex.frame.origin.x,cell.sex.frame.origin.y,cell.sex.frame.size.width,cell.sex.frame.size.height);
