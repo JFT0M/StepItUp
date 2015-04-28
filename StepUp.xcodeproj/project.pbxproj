@@ -67,6 +67,18 @@
 		30B1C4141AEF5433009C6734 /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B1C4121AEF5433009C6734 /* ReminderCell.xib */; };
 		30B1C4181AEF5457009C6734 /* ReminderFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B1C4161AEF5457009C6734 /* ReminderFoot.m */; };
 		30B1C4191AEF5457009C6734 /* ReminderFoot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30B1C4171AEF5457009C6734 /* ReminderFoot.xib */; };
+		30E497951AEFD8EB00D28BAB /* SomethingNewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497941AEFD8EB00D28BAB /* SomethingNewTableViewController.m */; };
+		30E497D11AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497BB1AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.m */; };
+		30E497D21AEFD97600D28BAB /* XHAlbumLikesCommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497BD1AEFD97600D28BAB /* XHAlbumLikesCommentsView.m */; };
+		30E497D31AEFD97600D28BAB /* XHAlbumOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497BF1AEFD97600D28BAB /* XHAlbumOperationView.m */; };
+		30E497D41AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497C11AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.m */; };
+		30E497D51AEFD97600D28BAB /* XHAlbumRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497C31AEFD97600D28BAB /* XHAlbumRichTextView.m */; };
+		30E497D61AEFD97600D28BAB /* XHAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497C51AEFD97600D28BAB /* XHAlbumTableViewCell.m */; };
+		30E497D71AEFD97600D28BAB /* XHSendMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497C71AEFD97600D28BAB /* XHSendMessageView.m */; };
+		30E497D81AEFD97600D28BAB /* XHAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497C91AEFD97600D28BAB /* XHAlbum.m */; };
+		30E497D91AEFD97600D28BAB /* XHImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497CC1AEFD97600D28BAB /* XHImageViewer.m */; };
+		30E497DA1AEFD97600D28BAB /* XHViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497CE1AEFD97600D28BAB /* XHViewState.m */; };
+		30E497DB1AEFD97600D28BAB /* XHZoomingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E497D01AEFD97600D28BAB /* XHZoomingImageView.m */; };
 		ABAE63DD1AEBD154001E5A16 /* MeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63D41AEBD154001E5A16 /* MeHeadCell.m */; };
 		ABAE63DE1AEBD154001E5A16 /* MeFensiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63D71AEBD154001E5A16 /* MeFensiCell.m */; };
 		ABAE63DF1AEBD154001E5A16 /* MeHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABAE63D81AEBD154001E5A16 /* MeHeadCell.xib */; };
@@ -193,6 +205,30 @@
 		30B1C4151AEF5457009C6734 /* ReminderFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderFoot.h; sourceTree = "<group>"; };
 		30B1C4161AEF5457009C6734 /* ReminderFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderFoot.m; sourceTree = "<group>"; };
 		30B1C4171AEF5457009C6734 /* ReminderFoot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderFoot.xib; sourceTree = "<group>"; };
+		30E497931AEFD8EB00D28BAB /* SomethingNewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomethingNewTableViewController.h; sourceTree = "<group>"; };
+		30E497941AEFD8EB00D28BAB /* SomethingNewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomethingNewTableViewController.m; sourceTree = "<group>"; };
+		30E497BA1AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		30E497BB1AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		30E497BC1AEFD97600D28BAB /* XHAlbumLikesCommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumLikesCommentsView.h; sourceTree = "<group>"; };
+		30E497BD1AEFD97600D28BAB /* XHAlbumLikesCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumLikesCommentsView.m; sourceTree = "<group>"; };
+		30E497BE1AEFD97600D28BAB /* XHAlbumOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumOperationView.h; sourceTree = "<group>"; };
+		30E497BF1AEFD97600D28BAB /* XHAlbumOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumOperationView.m; sourceTree = "<group>"; };
+		30E497C01AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		30E497C11AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		30E497C21AEFD97600D28BAB /* XHAlbumRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumRichTextView.h; sourceTree = "<group>"; };
+		30E497C31AEFD97600D28BAB /* XHAlbumRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumRichTextView.m; sourceTree = "<group>"; };
+		30E497C41AEFD97600D28BAB /* XHAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumTableViewCell.h; sourceTree = "<group>"; };
+		30E497C51AEFD97600D28BAB /* XHAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumTableViewCell.m; sourceTree = "<group>"; };
+		30E497C61AEFD97600D28BAB /* XHSendMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSendMessageView.h; sourceTree = "<group>"; };
+		30E497C71AEFD97600D28BAB /* XHSendMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSendMessageView.m; sourceTree = "<group>"; };
+		30E497C81AEFD97600D28BAB /* XHAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbum.h; sourceTree = "<group>"; };
+		30E497C91AEFD97600D28BAB /* XHAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbum.m; sourceTree = "<group>"; };
+		30E497CB1AEFD97600D28BAB /* XHImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHImageViewer.h; sourceTree = "<group>"; };
+		30E497CC1AEFD97600D28BAB /* XHImageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHImageViewer.m; sourceTree = "<group>"; };
+		30E497CD1AEFD97600D28BAB /* XHViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHViewState.h; sourceTree = "<group>"; };
+		30E497CE1AEFD97600D28BAB /* XHViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHViewState.m; sourceTree = "<group>"; };
+		30E497CF1AEFD97600D28BAB /* XHZoomingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHZoomingImageView.h; sourceTree = "<group>"; };
+		30E497D01AEFD97600D28BAB /* XHZoomingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHZoomingImageView.m; sourceTree = "<group>"; };
 		5201C7B9E535289701CD6687 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2D2B9C600C44E5F7823C4E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9696A524C6356E03A32DF129 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -642,8 +678,46 @@
 		30B98BEA1AE66C7B00A05ECC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				30E497CA1AEFD97600D28BAB /* XHImageViewer */,
+				30E497B91AEFD97600D28BAB /* AlbumContentViews */,
+				30E497C81AEFD97600D28BAB /* XHAlbum.h */,
+				30E497C91AEFD97600D28BAB /* XHAlbum.m */,
 			);
 			path = Discover;
+			sourceTree = "<group>";
+		};
+		30E497B91AEFD97600D28BAB /* AlbumContentViews */ = {
+			isa = PBXGroup;
+			children = (
+				30E497BA1AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.h */,
+				30E497BB1AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.m */,
+				30E497BC1AEFD97600D28BAB /* XHAlbumLikesCommentsView.h */,
+				30E497BD1AEFD97600D28BAB /* XHAlbumLikesCommentsView.m */,
+				30E497BE1AEFD97600D28BAB /* XHAlbumOperationView.h */,
+				30E497BF1AEFD97600D28BAB /* XHAlbumOperationView.m */,
+				30E497C01AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.h */,
+				30E497C11AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.m */,
+				30E497C21AEFD97600D28BAB /* XHAlbumRichTextView.h */,
+				30E497C31AEFD97600D28BAB /* XHAlbumRichTextView.m */,
+				30E497C41AEFD97600D28BAB /* XHAlbumTableViewCell.h */,
+				30E497C51AEFD97600D28BAB /* XHAlbumTableViewCell.m */,
+				30E497C61AEFD97600D28BAB /* XHSendMessageView.h */,
+				30E497C71AEFD97600D28BAB /* XHSendMessageView.m */,
+			);
+			path = AlbumContentViews;
+			sourceTree = "<group>";
+		};
+		30E497CA1AEFD97600D28BAB /* XHImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				30E497CB1AEFD97600D28BAB /* XHImageViewer.h */,
+				30E497CC1AEFD97600D28BAB /* XHImageViewer.m */,
+				30E497CD1AEFD97600D28BAB /* XHViewState.h */,
+				30E497CE1AEFD97600D28BAB /* XHViewState.m */,
+				30E497CF1AEFD97600D28BAB /* XHZoomingImageView.h */,
+				30E497D01AEFD97600D28BAB /* XHZoomingImageView.m */,
+			);
+			path = XHImageViewer;
 			sourceTree = "<group>";
 		};
 		ABAE63D11AEBD0DC001E5A16 /* Me */ = {
@@ -686,6 +760,8 @@
 		ABAE63EE1AEBD567001E5A16 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				30E497931AEFD8EB00D28BAB /* SomethingNewTableViewController.h */,
+				30E497941AEFD8EB00D28BAB /* SomethingNewTableViewController.m */,
 				ABAE63EF1AEBD583001E5A16 /* DiscoverViewController.swift */,
 			);
 			path = Discover;
@@ -874,12 +950,16 @@
 				3094329E1AE6376B0031A64E /* MainTabBarViewController.swift in Sources */,
 				309433251AE64C4C0031A64E /* IntroduceViewController.swift in Sources */,
 				30B1C4091AEF37BF009C6734 /* ToDoAllStyleViewController.m in Sources */,
+				30E497D11AEFD97600D28BAB /* XHAlbumCollectionViewFlowLayout.m in Sources */,
 				30B1C3FB1AEF32C0009C6734 /* JTCalendarDayView.m in Sources */,
 				30B1C3FE1AEF32C0009C6734 /* JTCalendarMonthView.m in Sources */,
 				309432FF1AE63D880031A64E /* SIUCreateScheduleTextCell.m in Sources */,
+				30E497D81AEFD97600D28BAB /* XHAlbum.m in Sources */,
+				30E497D71AEFD97600D28BAB /* XHSendMessageView.m in Sources */,
 				ABAE63E21AEBD154001E5A16 /* MeSelectCell.m in Sources */,
 				ABAE63DD1AEBD154001E5A16 /* MeHeadCell.m in Sources */,
 				ABAE63EB1AEBD170001E5A16 /* MeViewController.m in Sources */,
+				30E497DB1AEFD97600D28BAB /* XHZoomingImageView.m in Sources */,
 				309432E11AE63D4F0031A64E /* XHPopMenu.m in Sources */,
 				309433121AE63E200031A64E /* DSNavigationBar.m in Sources */,
 				309432FD1AE63D880031A64E /* SIUCreateScheduleDatePickerCell.m in Sources */,
@@ -888,12 +968,15 @@
 				309432F91AE63D880031A64E /* SIUBasicBlueCell.m in Sources */,
 				309432021AE634F10031A64E /* StepUp.xcdatamodeld in Sources */,
 				309433021AE63D880031A64E /* SIURightDetailCell.m in Sources */,
+				30E497D41AEFD97600D28BAB /* XHAlbumPhotoCollectionViewCell.m in Sources */,
 				ABAE63F01AEBD583001E5A16 /* DiscoverViewController.swift in Sources */,
 				30B1C4051AEF35C2009C6734 /* ReminderHead.m in Sources */,
 				309433131AE63E200031A64E /* DWBubbleMenuButton.m in Sources */,
 				309432AF1AE63C830031A64E /* ToDoCalenderStyleViewController.m in Sources */,
 				30B1C3CE1AEF2F80009C6734 /* ToDoTabBarController.m in Sources */,
+				30E497D51AEFD97600D28BAB /* XHAlbumRichTextView.m in Sources */,
 				309432D61AE63D080031A64E /* SIUCreateScheduleViewController.m in Sources */,
+				30E497DA1AEFD97600D28BAB /* XHViewState.m in Sources */,
 				ABAE63E91AEBD170001E5A16 /* FenSiTableViewController.m in Sources */,
 				309433041AE63D880031A64E /* SIURightDetailDisclosureCell.m in Sources */,
 				ABAE63EA1AEBD170001E5A16 /* GuanZhuViewController.m in Sources */,
@@ -904,10 +987,14 @@
 				30B1C3F91AEF32C0009C6734 /* JTCalendarContentView.m in Sources */,
 				309432E31AE63D4F0031A64E /* XHPopMenuItemView.m in Sources */,
 				30B1C4001AEF32C0009C6734 /* JTCalendarWeekView.m in Sources */,
+				30E497951AEFD8EB00D28BAB /* SomethingNewTableViewController.m in Sources */,
+				30E497D91AEFD97600D28BAB /* XHImageViewer.m in Sources */,
+				30E497D61AEFD97600D28BAB /* XHAlbumTableViewCell.m in Sources */,
 				309432A21AE638110031A64E /* ABCIntroView.m in Sources */,
 				30B1C3FC1AEF32C0009C6734 /* JTCalendarMenuMonthView.m in Sources */,
 				30B1C3FA1AEF32C0009C6734 /* JTCalendarDataCache.m in Sources */,
 				309431FF1AE634F10031A64E /* AppDelegate.swift in Sources */,
+				30E497D31AEFD97600D28BAB /* XHAlbumOperationView.m in Sources */,
 				ABAE63DE1AEBD154001E5A16 /* MeFensiCell.m in Sources */,
 				309432FB1AE63D880031A64E /* SIUBasicSwitchCell.m in Sources */,
 				30B1C3F71AEF32C0009C6734 /* JTCalendar.m in Sources */,
@@ -916,6 +1003,7 @@
 				30B1C40C1AEF37EA009C6734 /* ToDoTypeStyleViewController.m in Sources */,
 				30B1C3FD1AEF32C0009C6734 /* JTCalendarMenuView.m in Sources */,
 				30B1C4131AEF5433009C6734 /* ReminderCell.m in Sources */,
+				30E497D21AEFD97600D28BAB /* XHAlbumLikesCommentsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
