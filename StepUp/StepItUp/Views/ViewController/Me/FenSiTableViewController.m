@@ -50,9 +50,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MeFensiCell *cell = [MeFensiCell cellWithTableView:tableView];
     
-    [cell setData:nil name:@"水电费" sex:1 shoushou:nil];
+    cell.sixin.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTapOnSiXin = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapOnSiXin:)];
+    [cell.sixin addGestureRecognizer:singleTapOnSiXin];
     
     return cell;
+}
+
+-(void)singleTapOnSiXin:(UIGestureRecognizer *)gestureRecognizer{
+    NSLog(@"yyyyy");
+}
+
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"这是第: %d", indexPath.row);
 }
 
 //关键方法，获取复用的Cell后模拟赋值，然后取得Cell高度

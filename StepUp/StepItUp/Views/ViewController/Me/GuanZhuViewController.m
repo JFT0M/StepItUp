@@ -58,6 +58,8 @@
     
     [cell setData:nil name:@"我的一dfdf号" sex:1 shoushou:nil];
     
+    cell.sixin.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTapOnSiXin = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapOnSiXin:)];
 //    
 //    NSLog(@"@@@@@@@@@name.x: %f, name.y: %f, name.width: %f, name.heignt: %f",cell.sex.frame.origin.x,cell.sex.frame.origin.y,cell.sex.frame.size.width,cell.sex.frame.size.height);
     return cell;

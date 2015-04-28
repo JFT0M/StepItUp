@@ -11,6 +11,8 @@ import UIKit
 
 class DiscoverViewController: UITableViewController {
 
+    var searchBar :UISearchBar?
+    var searchDisplay :UISearchDisplayController?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +21,14 @@ class DiscoverViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.tableView.delegate = self;
-        self.tableView.dataSource = self;
+     
+        searchBar = UISearchBar(frame: CGRectMake(0, 0, self.tableView.bounds.width, 20))
+        searchDisplay = UISearchDisplayController(searchBar: self.searchBar, contentsController: self)
+        self.tableView.tableHeaderView = searchBar
+
+        var view:UIView? = UIView()
+        view!.backgroundColor = UIColor.clearColor()
+        self.tableView.tableFooterView = view!
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +44,17 @@ class DiscoverViewController: UITableViewController {
         return 3
     }
 
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
+
+        var groupHeadView = UITableViewHeaderFooterView()
+            
+            //groupHeadView.contentView.backgroundColor = UIColor.clearColor()
+        return groupHeadView
+  
+    }
+
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
