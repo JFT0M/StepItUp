@@ -6,18 +6,19 @@
 //  Copyright (c) 2014年 syfll. All rights reserved.
 //
 
-#import "ScheduleViewController.h"
+#import "ToDoCalenderStyleViewController.h"
 #import "SIUCreateScheduleViewController.h"
 #import "SIUMacros.h"
 #import "XHPopMenu.h"
 #import "LKAlarmMamager.h"
-#import "ReminderCell.h"
-#import "DWBubbleMenuButton.h"
 
+#import "ReminderHead.h"
+#import "ReminderFoot.h"
+#import "ReminderCell.h"
 #define kDefaultAnimationDuration 0.25f
 #define FontSize 23.0f
 
-@interface ScheduleViewController (){
+@interface ToDoCalenderStyleViewController (){
     NSMutableDictionary *eventsByDate;
     NSArray * tableViewDateSource;
 }
@@ -27,12 +28,13 @@
 
 @end
 
-@implementation ScheduleViewController
+@implementation ToDoCalenderStyleViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setFontFamily:@"FagoOfficeSans-Regular" forView:self.view andSubViews:YES];
+    
     
     //添加日历阴影
     CALayer * calendarLayer = self.calendarContentView.superview.layer;
@@ -53,13 +55,11 @@
     changeDateBtnLayer.shadowRadius=3;
     
     
+    
+    
+
     //添加 changeDateBtn 响应事件
     [self.changeDateBtn addTarget:self action:@selector(didChangeModeTouch:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    //添加分类按钮
-    [self createDWBubbleMenuButton];
-    
     
     
     
@@ -84,6 +84,15 @@
     [self.calendar setMenuMonthsView:self.calendarMenuView];
     [self.calendar setContentView:self.calendarContentView];
     [self.calendar setDataSource:self];
+    
+    //更新按钮图片
+    if (self.calendar.calendarAppearance.isWeekMode == true) {
+        [self.changeDateBtn setImage:[UIImage imageNamed:@"multiply_down"] forState:UIControlStateNormal];
+    }else{
+        [self.changeDateBtn setImage:[UIImage imageNamed:@"multiply_up"] forState:UIControlStateNormal];
+    }
+    
+    tableViewDateSource = [self getEventsOneDay:self.calendar.currentDate];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -93,9 +102,15 @@
 }
 //初始化tableView
 -(void)initScheduleTable{
+    
     _scheduleTableView.backgroundColor = [UIColor clearColor];
     [_scheduleTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     _scheduleTableView.backgroundView = [[UIView alloc]init];
+//    UIView * tableViewHeadView = [[UIView alloc]init];
+//    tableViewHeadView = [ReminderHead CreateCell];
+//    CGRect headFrame = tableViewHeadView.frame;
+//    [tableViewHeadView addSubview:[ReminderHead CreateCell]];
+//    _scheduleTableView.tableHeaderView = tableViewHeadView;
 
 }
 //以前解决抽屉效果bug用的代码
@@ -202,6 +217,7 @@
 
 
 
+
 #pragma mark - Buttons callback
 //今天按钮响应
 - (void)didGoTodayTouch:(id)sender
@@ -269,77 +285,6 @@
     return _popMenu;
 }
 
-#pragma mark 分类弹出按钮
--(void)createDWBubbleMenuButton{
-    // Create up menu button
-    UIImageView *homeLabel = [self createHomeButtonView];
-    
-    DWBubbleMenuButton *upMenuView = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - homeLabel.frame.size.width - 20.f,
-                                                                                          self.view.frame.size.height - homeLabel.frame.size.height - 60.f,
-                                                                                          homeLabel.frame.size.width,
-                                                                                          homeLabel.frame.size.height)
-                                                            expansionDirection:DirectionUp];
-    upMenuView.homeButtonView = homeLabel;
-    
-    [upMenuView addButtons:[self createDemoButtonArray]];
-    
-    [self.view addSubview:upMenuView];
-}
-- (UIImageView *)createHomeButtonView {
-    UIImageView *homeView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 40.f)];
-    [homeView setImage:[UIImage imageNamed:@"multiply_float__touch"]];
-    //homeView.backgroundColor = [UIColor blackColor];
-    //homeView.layer.cornerRadius = homeView.frame.size.height / 2.f;
-    //homeView.backgroundColor =[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f];
-    //homeView.clipsToBounds = YES;
-    
-    return homeView;
-}
-- (NSArray *)createDemoButtonArray {
-    NSMutableArray *buttonsMutable = [[NSMutableArray alloc] init];
-    
-    int i = 0;
-    for (NSString *imageName in @[@"multipy_float__all", @"multipy_float__calendar", @"multipy_float__sort"]) {
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-        
-        button.tag = i++;
-        
-        [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [buttonsMutable addObject:button];
-    }
-    
-    return [buttonsMutable copy];
-}
-
-- (void)test:(UIButton *)sender {
-    NSLog(@"Button tapped, tag: %ld", (long)sender.tag);
-    switch (sender.tag) {
-        case 0:
-            //显示所有
-            break;
-        case 1:
-            //显示日历模式
-            break;
-        case 2:
-            //显示分类
-            break;
-        default:
-            break;
-    }
-}
-
-- (UIButton *)createButtonWithName:(NSString *)imageName {
-    UIButton *button = [[UIButton alloc] init];
-    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-    [button sizeToFit];
-    
-    [button addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
-    
-    return button;
-}
-
 
 
 #pragma mark - JTCalendarDataSource
@@ -363,7 +308,7 @@
     NSLog(@"Date: %@ - %ld events", date, [events count]);
     
     [self getLKAlarmEvents];
-    //test
+#warning 这个地方是测试假数据用的
     tableViewDateSource = [self getEventsOneDay:date];
     [self.tableView reloadData];
     //点击日期后改变显示模式
@@ -398,15 +343,18 @@
     NSArray *events;
     
     NSString *key = [[self dateFormatter] stringFromDate:date];
-    events = [[NSArray alloc]initWithArray:[(NSMutableDictionary*)eventsByDate[key] allValues]];
-    for (LKAlarmEvent *event in events) {
-        NSLog(@"Event:%@ - Date:%@",event.title ,key);
-    }
+    #warning 测试假数据方便使用的
+    events = [NSArray arrayWithObjects:@"日程1",@"日程2",@"日程3",@"日程4",nil];
+    #warning 这个地方是读取本地数据的,测试完之后记得改回去
+//    events = [[NSArray alloc]initWithArray:[(NSMutableDictionary*)eventsByDate[key] allValues]];
+//    for (LKAlarmEvent *event in events) {
+//        NSLog(@"Event:%@ - Date:%@",event.title ,key);
+//    }
     
     return events;
 }
 
-#pragma mark - Transition examples
+#pragma mark  Transition examples
 
 - (void)transitionExample
 {
@@ -436,7 +384,7 @@
                      }];
 }
 
-#pragma mark - Fake data
+#pragma mark  Fake data
 
 - (NSDateFormatter *)dateFormatter
 {
@@ -453,19 +401,26 @@
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
-    if (cell == nil) {
-        ReminderCell *reminderCell ;
-        LKAlarmEvent * event;
-        event = (LKAlarmEvent*)[tableViewDateSource objectAtIndex:indexPath.row];
-        if (indexPath.row %2) {
-            reminderCell= [ReminderCell CreateCell:LeftReminder content:event.title];
-        }else{
-            reminderCell= [ReminderCell CreateCell:RightReminder content:event.title];
+    UITableViewCell * cell;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderHead"];
+        if (cell == nil) {
+            ReminderHead *reminderHeadCell = [ReminderHead CreateCell];
+            cell = reminderHeadCell;
         }
-        
-        [reminderCell.cellBtn addTarget:self action:@selector(reminderCellTouchAction:) forControlEvents:UIControlEventTouchUpInside];
-        cell = reminderCell;
+    }else if (indexPath.row == tableViewDateSource.count-1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderFoot"];
+        if (cell == nil) {
+            ReminderFoot *reminderFootCell = [ReminderFoot CreateCell];
+            cell = reminderFootCell;
+        }
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ReminderCell"];
+        if (cell == nil) {
+            ReminderCell *reminderCell = [ReminderCell CreateCell];
+            cell = reminderCell;
+        }
+
     }
     
     return cell;
@@ -494,6 +449,8 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [self deleteMyNaviItem];
 }
+
+
 #pragma mark - 页面跳转
 - (void)pushNewViewController:(UIViewController *)newViewController {
     [self.navigationController pushViewController:newViewController animated:YES];
