@@ -10,7 +10,7 @@ import UIKit
 
 
 class DiscoverViewController: UITableViewController {
-    
+    var dataArray = ["关注动态","同城活动","热门日程","发现"]
     var searchBar :UISearchBar?
     var searchDisplay :UISearchDisplayController?
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class DiscoverViewController: UITableViewController {
         var view:UIView? = UIView()
         view!.backgroundColor = UIColor.clearColor()
         self.tableView.tableFooterView = view!
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +42,7 @@ class DiscoverViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 3
+        return 4
     }
     
     
@@ -58,21 +59,14 @@ class DiscoverViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        switch section{
-        case 0:
-            return 2;
-        case 1:
-            return 1;
-        case 2:
-            return 4;
-        default:
-            return 0;
-        }
+        return 1
         
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
         let MyCellIdentifier = "MeSelectCell"
         var cell:MeSelectCell? = tableView .dequeueReusableCellWithIdentifier(MyCellIdentifier) as? MeSelectCell
         if cell == nil {
@@ -84,6 +78,7 @@ class DiscoverViewController: UITableViewController {
                 }
             }
         }
+        cell?.label1.text = dataArray[indexPath.section]
         return cell!;
     }
     
