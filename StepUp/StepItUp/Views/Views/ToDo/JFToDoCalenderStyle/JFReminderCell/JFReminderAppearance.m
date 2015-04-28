@@ -23,7 +23,7 @@
 }
 -(void)setDefaultValues{
     //self.lineColor = [UIColor colorWithRed:172.0/255.0 green:0 blue:0 alpha:1];
-    self.lineColor = [UIColor colorWithRed:172.0/255.0 green:172.0/255.0 blue:172.0/255.0 alpha:1];
+    self.lineColor = [UIColor colorWithRed:175.0/255.0 green:172.0/255.0 blue:172.0/255.0 alpha:1];
     self.lineWidth = 3;
 }
 
