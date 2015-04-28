@@ -78,6 +78,20 @@
 		ABAE63EB1AEBD170001E5A16 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63E81AEBD170001E5A16 /* MeViewController.m */; };
 		ABAE63ED1AEBD3A8001E5A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABAE63EC1AEBD3A8001E5A16 /* Images.xcassets */; };
 		ABAE63F01AEBD583001E5A16 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAE63EF1AEBD583001E5A16 /* DiscoverViewController.swift */; };
+		ABC3AA701AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC3AA6F1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m */; };
+		ABD742CD1AEFB0E70074510C /* IMChat.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD742CC1AEFB0E60074510C /* IMChat.m */; };
+		ABD742D01AEFB95A0074510C /* IMMessageCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD742CF1AEFB95A0074510C /* IMMessageCellFactory.m */; };
+		ABD743141AEFCE690074510C /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743001AEFCE690074510C /* NSDataAdditions.m */; };
+		ABD743151AEFCE690074510C /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743021AEFCE690074510C /* NSDateAdditions.m */; };
+		ABD743161AEFCE690074510C /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743041AEFCE690074510C /* NSStringAdditions.m */; };
+		ABD743171AEFCE690074510C /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABD743051AEFCE690074510C /* Three20.bundle */; };
+		ABD743181AEFCE690074510C /* TTGlobalCoreLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743091AEFCE690074510C /* TTGlobalCoreLocale.m */; };
+		ABD743191AEFCE690074510C /* TTGlobalUICommon.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD7430B1AEFCE690074510C /* TTGlobalUICommon.m */; };
+		ABD7431A1AEFCE690074510C /* UIFontAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD7430D1AEFCE690074510C /* UIFontAdditions.m */; };
+		ABD7431B1AEFCE690074510C /* UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD7430F1AEFCE690074510C /* UIImageAdditions.m */; };
+		ABD7431C1AEFCE690074510C /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743111AEFCE690074510C /* UIViewAdditions.m */; };
+		ABD7431D1AEFCE690074510C /* UIWindowAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743131AEFCE690074510C /* UIWindowAdditions.m */; };
+		ABD743211AEFCE7A0074510C /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD743201AEFCE7A0074510C /* UIImage+Utils.m */; };
 		E2B58E5E525204641AED0574 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5201C7B9E535289701CD6687 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +227,35 @@
 		ABAE63E81AEBD170001E5A16 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		ABAE63EC1AEBD3A8001E5A16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABAE63EF1AEBD583001E5A16 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		ABC3AA6E1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChatMessageEntityFactory.h; sourceTree = "<group>"; };
+		ABC3AA6F1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMChatMessageEntityFactory.m; sourceTree = "<group>"; };
+		ABD742CB1AEFB0E60074510C /* IMChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMChat.h; path = ../Views/IMChat.h; sourceTree = "<group>"; };
+		ABD742CC1AEFB0E60074510C /* IMChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMChat.m; path = ../Views/IMChat.m; sourceTree = "<group>"; };
+		ABD742CE1AEFB95A0074510C /* IMMessageCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageCellFactory.h; sourceTree = "<group>"; };
+		ABD742CF1AEFB95A0074510C /* IMMessageCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageCellFactory.m; sourceTree = "<group>"; };
+		ABD742FF1AEFCE690074510C /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		ABD743001AEFCE690074510C /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		ABD743011AEFCE690074510C /* NSDateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateAdditions.h; sourceTree = "<group>"; };
+		ABD743021AEFCE690074510C /* NSDateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateAdditions.m; sourceTree = "<group>"; };
+		ABD743031AEFCE690074510C /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		ABD743041AEFCE690074510C /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		ABD743051AEFCE690074510C /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Three20.bundle; sourceTree = "<group>"; };
+		ABD743061AEFCE690074510C /* TTCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCategoryHeader.h; sourceTree = "<group>"; };
+		ABD743071AEFCE690074510C /* TTCorePreprocessorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCorePreprocessorMacros.h; sourceTree = "<group>"; };
+		ABD743081AEFCE690074510C /* TTGlobalCoreLocale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGlobalCoreLocale.h; sourceTree = "<group>"; };
+		ABD743091AEFCE690074510C /* TTGlobalCoreLocale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGlobalCoreLocale.m; sourceTree = "<group>"; };
+		ABD7430A1AEFCE690074510C /* TTGlobalUICommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTGlobalUICommon.h; sourceTree = "<group>"; };
+		ABD7430B1AEFCE690074510C /* TTGlobalUICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGlobalUICommon.m; sourceTree = "<group>"; };
+		ABD7430C1AEFCE690074510C /* UIFontAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontAdditions.h; sourceTree = "<group>"; };
+		ABD7430D1AEFCE690074510C /* UIFontAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontAdditions.m; sourceTree = "<group>"; };
+		ABD7430E1AEFCE690074510C /* UIImageAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAdditions.h; sourceTree = "<group>"; };
+		ABD7430F1AEFCE690074510C /* UIImageAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAdditions.m; sourceTree = "<group>"; };
+		ABD743101AEFCE690074510C /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		ABD743111AEFCE690074510C /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		ABD743121AEFCE690074510C /* UIWindowAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWindowAdditions.h; sourceTree = "<group>"; };
+		ABD743131AEFCE690074510C /* UIWindowAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWindowAdditions.m; sourceTree = "<group>"; };
+		ABD7431F1AEFCE7A0074510C /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		ABD743201AEFCE7A0074510C /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,15 +308,10 @@
 		309431FB1AE634F10031A64E /* StepUp */ = {
 			isa = PBXGroup;
 			children = (
-				3094325D1AE635C00031A64E /* Categories */,
-				3094325E1AE635C00031A64E /* DataBase */,
+				ABD743221AEFD1BE0074510C /* ViewModel */,
 				3094325F1AE635C00031A64E /* Doc */,
 				309432621AE635C00031A64E /* Macros */,
-				309432631AE635C00031A64E /* Models */,
-				309432641AE635C00031A64E /* Resource */,
-				3094326E1AE635C00031A64E /* Utilities */,
 				3094326F1AE635C00031A64E /* Vendor */,
-				309432701AE635C00031A64E /* ViewModels */,
 				309432651AE635C00031A64E /* StoryBoard */,
 				309432841AE635C00031A64E /* Views */,
 				309431FE1AE634F10031A64E /* AppDelegate.swift */,
@@ -311,22 +349,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3094325D1AE635C00031A64E /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Categories;
-			path = StepItUp/Categories;
-			sourceTree = "<group>";
-		};
-		3094325E1AE635C00031A64E /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DataBase;
-			path = StepItUp/DataBase;
-			sourceTree = "<group>";
-		};
 		3094325F1AE635C00031A64E /* Doc */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,22 +370,6 @@
 			path = StepItUp/Macros;
 			sourceTree = "<group>";
 		};
-		309432631AE635C00031A64E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
-			path = StepItUp/Models;
-			sourceTree = "<group>";
-		};
-		309432641AE635C00031A64E /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resource;
-			path = StepItUp/Resource;
-			sourceTree = "<group>";
-		};
 		309432651AE635C00031A64E /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,28 +386,14 @@
 			path = StepItUp/StoryBoard;
 			sourceTree = "<group>";
 		};
-		3094326E1AE635C00031A64E /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utilities;
-			path = StepItUp/Utilities;
-			sourceTree = "<group>";
-		};
 		3094326F1AE635C00031A64E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				ABD7431E1AEFCE7A0074510C /* UIImage+Utils */,
+				ABD742FE1AEFCE690074510C /* 320Categories */,
 			);
 			name = Vendor;
 			path = StepItUp/Vendor;
-			sourceTree = "<group>";
-		};
-		309432701AE635C00031A64E /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ViewModels;
-			path = StepItUp/ViewModels;
 			sourceTree = "<group>";
 		};
 		309432841AE635C00031A64E /* Views */ = {
@@ -417,6 +409,7 @@
 		309432981AE6364C0031A64E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				ABD742C91AEFB0020074510C /* Chat */,
 				ABAE63EE1AEBD567001E5A16 /* Discover */,
 				ABAE63D21AEBD10F001E5A16 /* Me */,
 				309433141AE647E20031A64E /* Group */,
@@ -429,6 +422,7 @@
 		309432991AE6364C0031A64E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABD742CA1AEFB00A0074510C /* Chat */,
 				ABAE63D11AEBD0DC001E5A16 /* Me */,
 				30B98BEA1AE66C7B00A05ECC /* Discover */,
 				3094331A1AE6491C0031A64E /* Dynamic */,
@@ -691,6 +685,79 @@
 			path = Discover;
 			sourceTree = "<group>";
 		};
+		ABC3AA6D1AEFD6B900BAF1FF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				ABC3AA6E1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.h */,
+				ABC3AA6F1AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		ABD742C91AEFB0020074510C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ABD742CB1AEFB0E60074510C /* IMChat.h */,
+				ABD742CC1AEFB0E60074510C /* IMChat.m */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		ABD742CA1AEFB00A0074510C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ABD742CE1AEFB95A0074510C /* IMMessageCellFactory.h */,
+				ABD742CF1AEFB95A0074510C /* IMMessageCellFactory.m */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		ABD742FE1AEFCE690074510C /* 320Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ABD742FF1AEFCE690074510C /* NSDataAdditions.h */,
+				ABD743001AEFCE690074510C /* NSDataAdditions.m */,
+				ABD743011AEFCE690074510C /* NSDateAdditions.h */,
+				ABD743021AEFCE690074510C /* NSDateAdditions.m */,
+				ABD743031AEFCE690074510C /* NSStringAdditions.h */,
+				ABD743041AEFCE690074510C /* NSStringAdditions.m */,
+				ABD743051AEFCE690074510C /* Three20.bundle */,
+				ABD743061AEFCE690074510C /* TTCategoryHeader.h */,
+				ABD743071AEFCE690074510C /* TTCorePreprocessorMacros.h */,
+				ABD743081AEFCE690074510C /* TTGlobalCoreLocale.h */,
+				ABD743091AEFCE690074510C /* TTGlobalCoreLocale.m */,
+				ABD7430A1AEFCE690074510C /* TTGlobalUICommon.h */,
+				ABD7430B1AEFCE690074510C /* TTGlobalUICommon.m */,
+				ABD7430C1AEFCE690074510C /* UIFontAdditions.h */,
+				ABD7430D1AEFCE690074510C /* UIFontAdditions.m */,
+				ABD7430E1AEFCE690074510C /* UIImageAdditions.h */,
+				ABD7430F1AEFCE690074510C /* UIImageAdditions.m */,
+				ABD743101AEFCE690074510C /* UIViewAdditions.h */,
+				ABD743111AEFCE690074510C /* UIViewAdditions.m */,
+				ABD743121AEFCE690074510C /* UIWindowAdditions.h */,
+				ABD743131AEFCE690074510C /* UIWindowAdditions.m */,
+			);
+			path = 320Categories;
+			sourceTree = "<group>";
+		};
+		ABD7431E1AEFCE7A0074510C /* UIImage+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ABD7431F1AEFCE7A0074510C /* UIImage+Utils.h */,
+				ABD743201AEFCE7A0074510C /* UIImage+Utils.m */,
+			);
+			path = "UIImage+Utils";
+			sourceTree = "<group>";
+		};
+		ABD743221AEFD1BE0074510C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABC3AA6D1AEFD6B900BAF1FF /* Entities */,
+			);
+			name = ViewModel;
+			path = StepItUp/ViewModel;
+			sourceTree = "<group>";
+		};
 		C3FD334F6DC1819899C5FE41 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +850,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD743171AEFCE690074510C /* Three20.bundle in Resources */,
 				309432881AE635C00031A64E /* SIUContactSB.storyboard in Resources */,
 				30B1C4061AEF35C2009C6734 /* ReminderHead.xib in Resources */,
 				ABAE63ED1AEBD3A8001E5A16 /* Images.xcassets in Resources */,
@@ -871,12 +939,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD742CD1AEFB0E70074510C /* IMChat.m in Sources */,
+				ABC3AA701AEFD6B900BAF1FF /* IMChatMessageEntityFactory.m in Sources */,
 				3094329E1AE6376B0031A64E /* MainTabBarViewController.swift in Sources */,
+				ABD7431A1AEFCE690074510C /* UIFontAdditions.m in Sources */,
 				309433251AE64C4C0031A64E /* IntroduceViewController.swift in Sources */,
 				30B1C4091AEF37BF009C6734 /* ToDoAllStyleViewController.m in Sources */,
 				30B1C3FB1AEF32C0009C6734 /* JTCalendarDayView.m in Sources */,
 				30B1C3FE1AEF32C0009C6734 /* JTCalendarMonthView.m in Sources */,
+				ABD743141AEFCE690074510C /* NSDataAdditions.m in Sources */,
 				309432FF1AE63D880031A64E /* SIUCreateScheduleTextCell.m in Sources */,
+				ABD743181AEFCE690074510C /* TTGlobalCoreLocale.m in Sources */,
+				ABD743151AEFCE690074510C /* NSDateAdditions.m in Sources */,
 				ABAE63E21AEBD154001E5A16 /* MeSelectCell.m in Sources */,
 				ABAE63DD1AEBD154001E5A16 /* MeHeadCell.m in Sources */,
 				ABAE63EB1AEBD170001E5A16 /* MeViewController.m in Sources */,
@@ -887,6 +961,7 @@
 				30B1C3FF1AEF32C0009C6734 /* JTCalendarMonthWeekDaysView.m in Sources */,
 				309432F91AE63D880031A64E /* SIUBasicBlueCell.m in Sources */,
 				309432021AE634F10031A64E /* StepUp.xcdatamodeld in Sources */,
+				ABD743161AEFCE690074510C /* NSStringAdditions.m in Sources */,
 				309433021AE63D880031A64E /* SIURightDetailCell.m in Sources */,
 				ABAE63F01AEBD583001E5A16 /* DiscoverViewController.swift in Sources */,
 				30B1C4051AEF35C2009C6734 /* ReminderHead.m in Sources */,
@@ -898,12 +973,16 @@
 				309433041AE63D880031A64E /* SIURightDetailDisclosureCell.m in Sources */,
 				ABAE63EA1AEBD170001E5A16 /* GuanZhuViewController.m in Sources */,
 				303839E41AE8A33E00BF65C4 /* GroupCell.swift in Sources */,
+				ABD743211AEFCE7A0074510C /* UIImage+Utils.m in Sources */,
 				309433171AE648550031A64E /* GroupViewController.swift in Sources */,
 				30B1C40F1AEF4022009C6734 /* JFReminderAppearance.m in Sources */,
 				30B1C4181AEF5457009C6734 /* ReminderFoot.m in Sources */,
+				ABD7431C1AEFCE690074510C /* UIViewAdditions.m in Sources */,
 				30B1C3F91AEF32C0009C6734 /* JTCalendarContentView.m in Sources */,
+				ABD7431B1AEFCE690074510C /* UIImageAdditions.m in Sources */,
 				309432E31AE63D4F0031A64E /* XHPopMenuItemView.m in Sources */,
 				30B1C4001AEF32C0009C6734 /* JTCalendarWeekView.m in Sources */,
+				ABD742D01AEFB95A0074510C /* IMMessageCellFactory.m in Sources */,
 				309432A21AE638110031A64E /* ABCIntroView.m in Sources */,
 				30B1C3FC1AEF32C0009C6734 /* JTCalendarMenuMonthView.m in Sources */,
 				30B1C3FA1AEF32C0009C6734 /* JTCalendarDataCache.m in Sources */,
@@ -913,7 +992,9 @@
 				30B1C3F71AEF32C0009C6734 /* JTCalendar.m in Sources */,
 				30B1C3F81AEF32C0009C6734 /* JTCalendarAppearance.m in Sources */,
 				30B1C4011AEF32C0009C6734 /* JTCircleView.m in Sources */,
+				ABD7431D1AEFCE690074510C /* UIWindowAdditions.m in Sources */,
 				30B1C40C1AEF37EA009C6734 /* ToDoTypeStyleViewController.m in Sources */,
+				ABD743191AEFCE690074510C /* TTGlobalUICommon.m in Sources */,
 				30B1C3FD1AEF32C0009C6734 /* JTCalendarMenuView.m in Sources */,
 				30B1C4131AEF5433009C6734 /* ReminderCell.m in Sources */,
 			);

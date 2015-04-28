@@ -8,7 +8,7 @@
 
 #import "FenSiTableViewController.h"
 #import "MeFensiCell.h"
-
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 @interface FenSiTableViewController ()
 
 @end
@@ -51,7 +51,7 @@
     MeFensiCell *cell = [MeFensiCell cellWithTableView:tableView];
     
     [cell setData:nil name:@"水电费" sex:1 shoushou:nil];
-    
+     cell.sixin.frame = CGRectMake(SCREEN_WIDTH-cell.sixin.frame.size.width-15, (cell.frame.size.height-cell.sixin.frame.size.height)/2, cell.sixin.frame.size.width, cell.sixin.frame.size.height);
     return cell;
 }
 
