@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3002D8F41AF10AEF004CCF76 /* button_send_comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3002D8B71AF10AEF004CCF76 /* button_send_comment@2x.png */; };
-		3002D8F51AF10AEF004CCF76 /* DDRichTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8BA1AF10AEF004CCF76 /* DDRichTextViewController.m */; };
 		3002D8F61AF10AEF004CCF76 /* ILRegularExpressionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8BC1AF10AEF004CCF76 /* ILRegularExpressionManager.m */; };
-		3002D8F71AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8BE1AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.m */; };
-		3002D8F81AF10AEF004CCF76 /* NSString+NSString_ILExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8C01AF10AEF004CCF76 /* NSString+NSString_ILExtension.m */; };
-		3002D8F91AF10AEF004CCF76 /* reply_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3002D8C11AF10AEF004CCF76 /* reply_button@2x.png */; };
-		3002D90B1AF10AEF004CCF76 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 3002D8E51AF10AEF004CCF76 /* Thumbs.db */; };
 		3002D90C1AF10AEF004CCF76 /* WFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8E71AF10AEF004CCF76 /* WFTextView.m */; };
 		3002D90D1AF10AEF004CCF76 /* YMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8E91AF10AEF004CCF76 /* YMButton.m */; };
 		3002D90E1AF10AEF004CCF76 /* YMReplyInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8EB1AF10AEF004CCF76 /* YMReplyInputView.m */; };
@@ -22,6 +16,9 @@
 		3002D9111AF10AEF004CCF76 /* YMTapGestureRecongnizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8F11AF10AEF004CCF76 /* YMTapGestureRecongnizer.m */; };
 		3002D9121AF10AEF004CCF76 /* YMTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D8F31AF10AEF004CCF76 /* YMTextData.m */; };
 		3002D9151AF10B16004CCF76 /* SomeThingNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D9141AF10B16004CCF76 /* SomeThingNewViewController.m */; };
+		3002D9221AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D91F1AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.m */; };
+		3002D9231AF11F7A004CCF76 /* NSString+NSString_ILExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D9211AF11F7A004CCF76 /* NSString+NSString_ILExtension.m */; };
+		3002D9261AF11FFA004CCF76 /* DDRichTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002D9251AF11FFA004CCF76 /* DDRichTextViewController.m */; };
 		303839E41AE8A33E00BF65C4 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303839E21AE8A33E00BF65C4 /* GroupCell.swift */; };
 		303839E51AE8A33E00BF65C4 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 303839E31AE8A33E00BF65C4 /* GroupCell.xib */; };
 		309431FF1AE634F10031A64E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309431FE1AE634F10031A64E /* AppDelegate.swift */; };
@@ -125,18 +122,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3002D8B71AF10AEF004CCF76 /* button_send_comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_send_comment@2x.png"; sourceTree = "<group>"; };
 		3002D8B81AF10AEF004CCF76 /* ContantHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContantHead.h; sourceTree = "<group>"; };
-		3002D8B91AF10AEF004CCF76 /* DDRichTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRichTextViewController.h; sourceTree = "<group>"; };
-		3002D8BA1AF10AEF004CCF76 /* DDRichTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRichTextViewController.m; sourceTree = "<group>"; };
 		3002D8BB1AF10AEF004CCF76 /* ILRegularExpressionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILRegularExpressionManager.h; sourceTree = "<group>"; };
 		3002D8BC1AF10AEF004CCF76 /* ILRegularExpressionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILRegularExpressionManager.m; sourceTree = "<group>"; };
-		3002D8BD1AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSArray_ILExtension.h"; sourceTree = "<group>"; };
-		3002D8BE1AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NSArray_ILExtension.m"; sourceTree = "<group>"; };
-		3002D8BF1AF10AEF004CCF76 /* NSString+NSString_ILExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_ILExtension.h"; sourceTree = "<group>"; };
-		3002D8C01AF10AEF004CCF76 /* NSString+NSString_ILExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_ILExtension.m"; sourceTree = "<group>"; };
-		3002D8C11AF10AEF004CCF76 /* reply_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reply_button@2x.png"; sourceTree = "<group>"; };
-		3002D8E51AF10AEF004CCF76 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		3002D8E61AF10AEF004CCF76 /* WFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFTextView.h; sourceTree = "<group>"; };
 		3002D8E71AF10AEF004CCF76 /* WFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFTextView.m; sourceTree = "<group>"; };
 		3002D8E81AF10AEF004CCF76 /* YMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMButton.h; sourceTree = "<group>"; };
@@ -153,6 +141,12 @@
 		3002D8F31AF10AEF004CCF76 /* YMTextData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTextData.m; sourceTree = "<group>"; };
 		3002D9131AF10B16004CCF76 /* SomeThingNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeThingNewViewController.h; sourceTree = "<group>"; };
 		3002D9141AF10B16004CCF76 /* SomeThingNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeThingNewViewController.m; sourceTree = "<group>"; };
+		3002D91E1AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSArray_ILExtension.h"; sourceTree = "<group>"; };
+		3002D91F1AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NSArray_ILExtension.m"; sourceTree = "<group>"; };
+		3002D9201AF11F7A004CCF76 /* NSString+NSString_ILExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_ILExtension.h"; sourceTree = "<group>"; };
+		3002D9211AF11F7A004CCF76 /* NSString+NSString_ILExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_ILExtension.m"; sourceTree = "<group>"; };
+		3002D9241AF11FFA004CCF76 /* DDRichTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRichTextViewController.h; sourceTree = "<group>"; };
+		3002D9251AF11FFA004CCF76 /* DDRichTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRichTextViewController.m; sourceTree = "<group>"; };
 		303839E21AE8A33E00BF65C4 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		303839E31AE8A33E00BF65C4 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		309431F91AE634F10031A64E /* StepUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,18 +345,9 @@
 		3002D8B61AF10AEF004CCF76 /* DDRichTextLib */ = {
 			isa = PBXGroup;
 			children = (
-				3002D8B71AF10AEF004CCF76 /* button_send_comment@2x.png */,
 				3002D8B81AF10AEF004CCF76 /* ContantHead.h */,
-				3002D8B91AF10AEF004CCF76 /* DDRichTextViewController.h */,
-				3002D8BA1AF10AEF004CCF76 /* DDRichTextViewController.m */,
 				3002D8BB1AF10AEF004CCF76 /* ILRegularExpressionManager.h */,
 				3002D8BC1AF10AEF004CCF76 /* ILRegularExpressionManager.m */,
-				3002D8BD1AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.h */,
-				3002D8BE1AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.m */,
-				3002D8BF1AF10AEF004CCF76 /* NSString+NSString_ILExtension.h */,
-				3002D8C01AF10AEF004CCF76 /* NSString+NSString_ILExtension.m */,
-				3002D8C11AF10AEF004CCF76 /* reply_button@2x.png */,
-				3002D8E51AF10AEF004CCF76 /* Thumbs.db */,
 				3002D8E61AF10AEF004CCF76 /* WFTextView.h */,
 				3002D8E71AF10AEF004CCF76 /* WFTextView.m */,
 				3002D8E81AF10AEF004CCF76 /* YMButton.h */,
@@ -379,6 +364,18 @@
 				3002D8F31AF10AEF004CCF76 /* YMTextData.m */,
 			);
 			path = DDRichTextLib;
+			sourceTree = "<group>";
+		};
+		3002D91D1AF11F7A004CCF76 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3002D91E1AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.h */,
+				3002D91F1AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.m */,
+				3002D9201AF11F7A004CCF76 /* NSString+NSString_ILExtension.h */,
+				3002D9211AF11F7A004CCF76 /* NSString+NSString_ILExtension.m */,
+			);
+			name = Categories;
+			path = StepItUp/Categories;
 			sourceTree = "<group>";
 		};
 		309431F01AE634F10031A64E = {
@@ -404,6 +401,7 @@
 		309431FB1AE634F10031A64E /* StepUp */ = {
 			isa = PBXGroup;
 			children = (
+				3002D91D1AF11F7A004CCF76 /* Categories */,
 				30D5D2CF1AF0B7FC009C7ED7 /* Model */,
 				ABD743221AEFD1BE0074510C /* ViewModel */,
 				3094325F1AE635C00031A64E /* Doc */,
@@ -818,6 +816,8 @@
 		ABAE63EE1AEBD567001E5A16 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				3002D9241AF11FFA004CCF76 /* DDRichTextViewController.h */,
+				3002D9251AF11FFA004CCF76 /* DDRichTextViewController.m */,
 				3002D9131AF10B16004CCF76 /* SomeThingNewViewController.h */,
 				3002D9141AF10B16004CCF76 /* SomeThingNewViewController.m */,
 				ABAE63EF1AEBD583001E5A16 /* DiscoverViewController.swift */,
@@ -996,7 +996,6 @@
 				ABAE63ED1AEBD3A8001E5A16 /* Images.xcassets in Resources */,
 				309432851AE635C00031A64E /* TODO in Resources */,
 				3094328D1AE635C00031A64E /* SIUSomethingNewSB.storyboard in Resources */,
-				3002D90B1AF10AEF004CCF76 /* Thumbs.db in Resources */,
 				303839E51AE8A33E00BF65C4 /* GroupCell.xib in Resources */,
 				3094328E1AE635C00031A64E /* SIUToDoSB.storyboard in Resources */,
 				309432861AE635C00031A64E /* XMPP_CHANGES in Resources */,
@@ -1006,7 +1005,6 @@
 				ABAE63DF1AEBD154001E5A16 /* MeHeadCell.xib in Resources */,
 				ABAE63E01AEBD154001E5A16 /* MeSelectCell.xib in Resources */,
 				3094320C1AE634F10031A64E /* LaunchScreen.xib in Resources */,
-				3002D8F91AF10AEF004CCF76 /* reply_button@2x.png in Resources */,
 				ABAE63E11AEBD154001E5A16 /* MeFensiCell.xib in Resources */,
 				309432871AE635C00031A64E /* MainTabBarSB.storyboard in Resources */,
 				30B1C4141AEF5433009C6734 /* ReminderCell.xib in Resources */,
@@ -1015,7 +1013,6 @@
 				309432FA1AE63D880031A64E /* SIUBasicBlueCell.xib in Resources */,
 				309432891AE635C00031A64E /* SIUDiscoverSB.storyboard in Resources */,
 				3094328B1AE635C00031A64E /* SIUMeSB.storyboard in Resources */,
-				3002D8F41AF10AEF004CCF76 /* button_send_comment@2x.png in Resources */,
 				309432FE1AE63D880031A64E /* SIUCreateScheduleDatePickerCell.xib in Resources */,
 				3094328A1AE635C00031A64E /* SIUGroupSB.storyboard in Resources */,
 				3094328C1AE635C00031A64E /* SIUMessageSB.storyboard in Resources */,
@@ -1090,6 +1087,7 @@
 				ABD7431A1AEFCE690074510C /* UIFontAdditions.m in Sources */,
 				309433251AE64C4C0031A64E /* IntroduceViewController.swift in Sources */,
 				30B1C4091AEF37BF009C6734 /* ToDoAllStyleViewController.m in Sources */,
+				3002D9261AF11FFA004CCF76 /* DDRichTextViewController.m in Sources */,
 				30B1C3FB1AEF32C0009C6734 /* JTCalendarDayView.m in Sources */,
 				30B1C3FE1AEF32C0009C6734 /* JTCalendarMonthView.m in Sources */,
 				3002D8F61AF10AEF004CCF76 /* ILRegularExpressionManager.m in Sources */,
@@ -1110,7 +1108,6 @@
 				309432E21AE63D4F0031A64E /* XHPopMenuItem.m in Sources */,
 				30B1C3FF1AEF32C0009C6734 /* JTCalendarMonthWeekDaysView.m in Sources */,
 				309432F91AE63D880031A64E /* SIUBasicBlueCell.m in Sources */,
-				3002D8F51AF10AEF004CCF76 /* DDRichTextViewController.m in Sources */,
 				309432021AE634F10031A64E /* StepUp.xcdatamodeld in Sources */,
 				3002D9101AF10AEF004CCF76 /* YMTableViewCell.m in Sources */,
 				ABD743161AEFCE690074510C /* NSStringAdditions.m in Sources */,
@@ -1124,7 +1121,6 @@
 				3002D90D1AF10AEF004CCF76 /* YMButton.m in Sources */,
 				ABAE63E91AEBD170001E5A16 /* FenSiTableViewController.m in Sources */,
 				309433041AE63D880031A64E /* SIURightDetailDisclosureCell.m in Sources */,
-				3002D8F81AF10AEF004CCF76 /* NSString+NSString_ILExtension.m in Sources */,
 				ABAE63EA1AEBD170001E5A16 /* GuanZhuViewController.m in Sources */,
 				303839E41AE8A33E00BF65C4 /* GroupCell.swift in Sources */,
 				ABD743211AEFCE7A0074510C /* UIImage+Utils.m in Sources */,
@@ -1132,7 +1128,7 @@
 				30B1C40F1AEF4022009C6734 /* JFReminderAppearance.m in Sources */,
 				30B1C4181AEF5457009C6734 /* ReminderFoot.m in Sources */,
 				ABD7431C1AEFCE690074510C /* UIViewAdditions.m in Sources */,
-				3002D8F71AF10AEF004CCF76 /* NSArray+NSArray_ILExtension.m in Sources */,
+				3002D9231AF11F7A004CCF76 /* NSString+NSString_ILExtension.m in Sources */,
 				30B1C3F91AEF32C0009C6734 /* JTCalendarContentView.m in Sources */,
 				3002D9111AF10AEF004CCF76 /* YMTapGestureRecongnizer.m in Sources */,
 				ABD7431B1AEFCE690074510C /* UIImageAdditions.m in Sources */,
@@ -1150,6 +1146,7 @@
 				30B1C3F81AEF32C0009C6734 /* JTCalendarAppearance.m in Sources */,
 				30B1C4011AEF32C0009C6734 /* JTCircleView.m in Sources */,
 				30D5D2E41AF0BB2B009C7ED7 /* JFUserModel.m in Sources */,
+				3002D9221AF11F7A004CCF76 /* NSArray+NSArray_ILExtension.m in Sources */,
 				ABD7431D1AEFCE690074510C /* UIWindowAdditions.m in Sources */,
 				30B1C40C1AEF37EA009C6734 /* ToDoTypeStyleViewController.m in Sources */,
 				ABD743191AEFCE690074510C /* TTGlobalUICommon.m in Sources */,
