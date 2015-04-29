@@ -10,6 +10,9 @@ import UIKit
 
 
 class DiscoverViewController: UITableViewController {
+    
+    let SomethingNewIdentifier = "showSomethingNewIdentifier"
+    
     var dataArray = ["关注动态","同城活动","热门日程","发现"]
     var searchBar :UISearchBar?
     var searchDisplay :UISearchDisplayController?
@@ -82,7 +85,13 @@ class DiscoverViewController: UITableViewController {
         return cell!;
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        if indexPath.row == 0 && indexPath.section == 0{
+            self.performSegueWithIdentifier(SomethingNewIdentifier, sender: self)
+        }else {
+            println("row is:%d , section is :%d",indexPath.row,indexPath.section)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
