@@ -30,7 +30,7 @@
         <!--Some Thing New View Controller-->
         <scene sceneID="vnM-BW-tW9">
             <objects>
-                <viewController id="TqB-nz-4v5" customClass="SomeThingNewViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="TqB-nz-4v5" customClass="SomeThingNewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OiM-fB-59P"/>
                         <viewControllerLayoutGuide type="bottom" id="FNq-7U-frO"/>

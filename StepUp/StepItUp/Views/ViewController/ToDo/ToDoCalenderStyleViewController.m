@@ -33,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setFontFamily:@"FagoOfficeSans-Regular" forView:self.view andSubViews:YES];
+    //设置字体（不用了）
+    //[self setFontFamily:@"FagoOfficeSans-Regular" forView:self.view andSubViews:YES];
     
     
     //添加日历阴影
@@ -63,7 +64,7 @@
     
     
     
-    //设置导航栏
+    #pragma mark 解决preferredStatusBarStyle不执行问题
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     //设置日程列表
@@ -455,10 +456,12 @@
 - (void)pushNewViewController:(UIViewController *)newViewController {
     [self.navigationController pushViewController:newViewController animated:YES];
 }
+#pragma mark - 设置标题栏为白色
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
+#pragma mark - 为整个App设置一个字体,但不指定字体大小的方法 （不用了）
 -(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews
 {
     if ([view isKindOfClass:[UILabel class]])
