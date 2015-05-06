@@ -30,6 +30,7 @@
         self.attributedData = [[NSMutableArray alloc] init];
         self.attributedDataWF = [[NSMutableArray alloc] init];
         self.showImageArray = [[NSMutableArray alloc] init];
+        self.likersDataSource = [[NSMutableArray alloc]init];
         self.replyDataSource = [[NSMutableArray alloc] init];
         _foldOrNot = YES;
         _islessLimit = NO;

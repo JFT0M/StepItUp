@@ -34,6 +34,9 @@ NSMutableArray * ymDataArray;
 	
 	NSMutableArray *_replyDataSource = [[NSMutableArray alloc] init];//回复数据来源
 	[_replyDataSource addObject:@"@Della:@戴伟来 DDRichText棒棒哒！ @daiweilai： @daiweilai @戴伟来:I am Della，这是一个IOS库[em:01:][em:02:][em:03:]"];
+    
+    NSMutableArray *_likersDataSource = [[NSMutableArray alloc] init];//点赞人数据源
+    [_likersDataSource addObjectsFromArray:[NSArray arrayWithObjects:@"JFT0M",@"JFT0M",@"JFT0M", nil]];
 	
 	ymDataArray =[[NSMutableArray alloc]init];
 
@@ -42,6 +45,7 @@ NSMutableArray * ymDataArray;
     ymData.foldOrNot = YES;
 	ymData.showShuoShuo = @"这是DDRichText！！支持富文本并且文本能够收缩和伸展，支持图片，支持图片预览，能够回复，使用非常简单！！，这是一个电话号码13800138000，我是@戴伟来 @daiweilai： @daiweilai @戴伟来:支持自定义表情[em:01:] [em:02:] [em:03:] 这是一个网址https://github.com/daiweilai 也支持自定义位置的富文本点击！";
     ymData.replyDataSource = _replyDataSource;
+    ymData.likersDataSource = _likersDataSource;
     ymData.name = @"David";
     ymData.intro = @"2015-2-8";
 	ymData.headPicURL = @"https://octodex.github.com/images/mummytocat.gif";
