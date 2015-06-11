@@ -49,7 +49,7 @@
         <scene sceneID="lVL-qz-zY3">
             <objects>
                 <navigationController id="0zW-zS-gou" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nma-ad-BOg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nma-ad-BOg" customClass="DSNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

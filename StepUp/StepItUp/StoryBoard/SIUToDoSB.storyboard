@@ -164,7 +164,7 @@
                                     <outlet property="delegate" destination="cNI-0S-kUP" id="Jlm-Yn-aJO"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rr-Zg-mDk" userLabel="changeDateButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rr-Zg-mDk" userLabel="changeDateButton">
                                 <rect key="frame" x="271" y="352" width="58" height="22"/>
                                 <state key="normal" image="multiply_down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,7 +285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0L-pN-Iqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2283" y="2168"/>
+            <point key="canvasLocation" x="-2043" y="2156"/>
         </scene>
         <!--Item-->
         <scene sceneID="RWq-UF-GiM">
@@ -353,6 +353,6 @@
         <image name="multiply_down" width="58" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ylo-22-zDa"/>
+        <segue reference="sw0-HC-XI5"/>
     </inferredMetricsTieBreakers>
 </document>
