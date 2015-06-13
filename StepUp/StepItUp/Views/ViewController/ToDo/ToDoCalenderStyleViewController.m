@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //设置字体（不用了）
     //[self setFontFamily:@"FagoOfficeSans-Regular" forView:self.view andSubViews:YES];
     
@@ -175,7 +176,7 @@
     printf("我要创建日程辣 ：）\n");
 }
 
-#pragma mark - 初始化导航栏Item
+#pragma mark - 初始化NaviItem
 -(void)initMyNaviItem{
     //找导航栏背景请转DSNavigationBar
     //导航栏在StoryBoard->navigationController->navigationBar

@@ -22,17 +22,15 @@ class DiscoverViewController: UITableViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
 
         InitNaviTiem()
-        //self.view.backgroundColor = UIColor.redColor()
         
-        self.tableView.tableHeaderView = nil
         //tableView不能滑动
         //self.tableView.scrollEnabled = false
         //tableView颜色
         self.tableView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         //self.tableView.backgroundColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1)
-        var view:UIView? = UIView()
-        view!.backgroundColor = UIColor.clearColor()
-        self.tableView.tableFooterView = view!
+//        var view:UIView? = UIView()
+//        view!.backgroundColor = UIColor.clearColor()
+//        self.tableView.tableFooterView = view!
         
     }
     
@@ -85,6 +83,12 @@ class DiscoverViewController: UITableViewController {
         }else {
             println("row is:%d , section is :%d",indexPath.row,indexPath.section)
         }
+    }
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+        return 15;
+    }
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        return 5;
     }
     //MARK: 初始化NaviTiem
     func InitNaviTiem(){

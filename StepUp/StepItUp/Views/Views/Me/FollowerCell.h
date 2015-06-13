@@ -1,5 +1,5 @@
 //
-//  MeViewController.h
+//  FollowerCell.h
 //  StepUp
 //
 //  Created by syfll on 15/6/13.
@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MeViewController : UITableViewController
+@interface FollowerCell : UITableViewCell
 
 @end
