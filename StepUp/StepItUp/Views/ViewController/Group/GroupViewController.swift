@@ -17,6 +17,11 @@ class GroupViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //MARK: 设置标题栏(最顶上那一条有信号什么的东西)&标题为白色
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        //初始化标题
+        InitNaviTiem()
+        
         
         cellDate = NSMutableArray(capacity: 10)
         loadCellDate()
@@ -26,6 +31,8 @@ class GroupViewController: UITableViewController {
         searchDisplay = UISearchDisplayController(searchBar: self.searchBar, contentsController: self)
         self.tableView.tableHeaderView = searchBar
 
+        self.tableView.tableHeaderView = UIView()
+        self.tableView.tableFooterView = UIView()
         //loadSearch()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -100,6 +107,18 @@ class GroupViewController: UITableViewController {
     }
 
 
+    //MARK: 初始化NaviTiem
+    func InitNaviTiem(){
+        var title = UIButton()
+        //设置标题字体大小
+        title.titleLabel?.font = UIFont.systemFontOfSize(titleFontSize)
+        //设置标题内容
+        title.setTitle("群组", forState: UIControlState.Normal)
+        title.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        
+        self.navigationItem.titleView = title
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -8,30 +8,29 @@
 
 import UIKit
 
-
+let titleFontSize : CGFloat = 23.0
 class DiscoverViewController: UITableViewController {
     
     let SomethingNewIdentifier = "showSomethingNewIdentifier"
+
+    let dataKeyValue : [ String : String ] = ["关注动态":"found_dynamic", "热门计划":"found_plan","同城用户":"found_local","同城计划":"found_localplan","红人榜":"found_people"]
+    let dataArray = [["关注动态"],["热门计划","同城用户","同城计划"],["红人榜"]]
     
-    var dataArray = ["关注动态","同城活动","热门日程","发现"]
-    var searchBar :UISearchBar?
-    var searchDisplay :UISearchDisplayController?
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: 设置标题栏(最顶上那一条有信号什么的东西)&标题为白色
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+
+        InitNaviTiem()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        searchBar = UISearchBar(frame: CGRectMake(0, 0, self.tableView.bounds.width, 20))
-        searchDisplay = UISearchDisplayController(searchBar: self.searchBar, contentsController: self)
-        self.tableView.tableHeaderView = searchBar
-        
-        var view:UIView? = UIView()
-        view!.backgroundColor = UIColor.clearColor()
-        self.tableView.tableFooterView = view!
+        //tableView不能滑动
+        //self.tableView.scrollEnabled = false
+        //tableView颜色
+        self.tableView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        //self.tableView.backgroundColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1)
+//        var view:UIView? = UIView()
+//        view!.backgroundColor = UIColor.clearColor()
+//        self.tableView.tableFooterView = view!
         
     }
     
@@ -45,7 +44,7 @@ class DiscoverViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 4
+        return dataArray.count
     }
     
     
@@ -62,27 +61,20 @@ class DiscoverViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return dataArray[section].count
         
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
-        let MyCellIdentifier = "MeSelectCell"
-        var cell:MeSelectCell? = tableView .dequeueReusableCellWithIdentifier(MyCellIdentifier) as? MeSelectCell
-        if cell == nil {
-            var topLevelObjects:NSArray = NSBundle.mainBundle().loadNibNamed("MeSelectCell", owner: nil, options: nil)
-            for   currentObject in topLevelObjects{
-                if currentObject.isKindOfClass(MeSelectCell.classForCoder()){
-                    cell = currentObject as MeSelectCell;
-                    break;
-                }
-            }
-        }
-        cell?.label1.text = dataArray[indexPath.section]
-        return cell!;
+        var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "DiscoverCell");
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        let titleName = dataArray[indexPath.section][indexPath.row]
+        let imageName = dataKeyValue[titleName]
+        cell.textLabel.text = titleName
+        cell.imageView.image = UIImage(named: imageName!)
+        return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
@@ -92,49 +84,24 @@ class DiscoverViewController: UITableViewController {
             println("row is:%d , section is :%d",indexPath.row,indexPath.section)
         }
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+        return 15;
     }
-    */
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        return 5;
     }
+    //MARK: 初始化NaviTiem
+    func InitNaviTiem(){
+        var title = UIButton()
+        //设置标题字体大小
+        title.titleLabel?.font = UIFont.systemFontOfSize(titleFontSize)
+        //设置标题内容
+        title.setTitle("发现", forState: UIControlState.Normal)
+        title.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        
+        self.navigationItem.titleView = title
+
     }
-    */
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

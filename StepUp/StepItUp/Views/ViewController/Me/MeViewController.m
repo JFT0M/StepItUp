@@ -1,204 +1,173 @@
 //
-//  ViewController.m
-//  Page4
+//  MeViewController.m
+//  StepUp
 //
-//  Created by chenLong on 15/4/5.
-//  Copyright (c) 2015年 chenLong. All rights reserved.
+//  Created by syfll on 15/6/13.
+//  Copyright (c) 2015年 JFT0M. All rights reserved.
 //
 
 #import "MeViewController.h"
-#import "MeHeadCell.h"
-#import "MeSelectCell.h"
-#import "GuanZhuViewController.h"
-#import "FenSiTableViewController.h"
+#import "ShowPicCell.h"
+#import "FollowerCell.h"
+#import "MeAccessoryDetailDisclosuerCell.h"
+
+#define FontSize 23.0f
+@interface MeViewController ()
+
+@end
 
 @implementation MeViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.tableView.dataSource = self;
-   self.tableView.delegate = self;
-    //    myTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
-//    self.view.backgroundColor = [UIColor blackColor];
     
+    #pragma mark 设置标题栏(最顶上那一条有信号什么的东西)&标题为白色
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    //初始化导航栏
+    [self initMyNaviItem];
+    
+    //注册Cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShowPicCell" bundle:nil] forCellReuseIdentifier:@"ShowPicCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FollowerCell" bundle:nil] forCellReuseIdentifier:@"FollowerCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MeAccessoryDetailDisclosuerCell" bundle:nil] forCellReuseIdentifier:@"MeAccessoryDetailDisclosuerCell"];
+
+    //这句话可以隐藏下面没有的分割线
+    self.tableView.tableFooterView = [[UIView alloc]init];
 
 }
-
-
-
+#pragma mark - 初始化NaviItem
+-(void)initMyNaviItem{
+    //找导航栏背景请转DSNavigationBar
+    //导航栏在StoryBoard->navigationController->navigationBar
+    
+    //自定义标题
+    UIButton * title = [UIButton buttonWithType:UIButtonTypeSystem];
+    title.titleLabel.font = [UIFont systemFontOfSize:FontSize];
+    [title setTitle:@"账号" forState:UIControlStateNormal];
+    [title setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [title setTintColor:[UIColor whiteColor]];
+    self.navigationItem.titleView = title;
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 2;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if([indexPath section] ==0){
-        static NSString *MyCellIdentifier = @"MeHeadCell";
-        MeHeadCell *cell = (MeHeadCell*) [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
-        cell.photo.layer.masksToBounds = YES;
-        cell.photo.layer.cornerRadius = 40;
-        if(cell == nil){
-            NSLog(@"New Cell Made");
-            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"MeHeadCell" owner:nil options:nil];
-            for(id currentObject in topLevelObjects)
-            {
-                if([currentObject isKindOfClass:[MeHeadCell class]])
-                {
-                    cell = (MeHeadCell *)currentObject;
-                    
-                    cell.photo.layer.masksToBounds = YES;
-                    
-                    cell.photo.layer.cornerRadius = 40;
-                    
-                    cell.photo.userInteractionEnabled = YES;
-                    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-                    [cell.photo addGestureRecognizer:singleTap];
-                    
-                    cell.guanZhu.userInteractionEnabled = YES;
-                    UITapGestureRecognizer *singleTapOnGuanZhu = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapOnGuanZhu:)];
-                    [cell.guanZhu addGestureRecognizer:singleTapOnGuanZhu];
-                    
-                    cell.fenSi.userInteractionEnabled = YES;
-                    UITapGestureRecognizer *singleTapOnFenSi = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapOnFenSi:)];
-                    [cell.fenSi addGestureRecognizer:singleTapOnFenSi];
-
-       
-                    break;
-                }
-            }
-            
-        }
-        
-        return cell;
-        
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    if(section == 0)
+        return 2;
+    else{
+        return 3;
     }
-    static NSString *MyCellIdentifier = @"MeSelectCell";
-    
-    MeSelectCell *cell = (MeSelectCell*) [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
-    
-    if(cell == nil){
-        NSLog(@"New Cell Made");
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"MeSelectCell" owner:nil options:nil];
-        for(id currentObject in topLevelObjects)
-        {
-            if([currentObject isKindOfClass:[MeSelectCell class]])
-            {
-                cell = (MeSelectCell *)currentObject;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    if (indexPath.section == 0 &indexPath.row == 0 ) {
+        //背景图片和头像的Cell
+        ShowPicCell *s_cell = [tableView dequeueReusableCellWithIdentifier:@"ShowPicCell" forIndexPath:indexPath];
+        [s_cell.headImage addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:s_cell.headImage
+                                                                                      action:@selector(headImageClick)]];
+        cell = s_cell;
+        
+    }else if (indexPath.section == 0 &indexPath.row == 1 ){
+        //关注、粉丝的Cell
+        cell = [tableView dequeueReusableCellWithIdentifier:@"FollowerCell" forIndexPath:indexPath];
+        cell.separatorInset = UIEdgeInsetsMake(0, 2, 3, 4);
+    }else if(indexPath.section == 1)
+    {
+        switch (indexPath.row) {
+            case 0:
+                cell = [tableView dequeueReusableCellWithIdentifier:@"MeAccessoryDetailDisclosuerCell" forIndexPath:indexPath];
+                cell.textLabel.text = @"日程收藏";
                 break;
-            }
+            case 1:
+                cell = [tableView dequeueReusableCellWithIdentifier:@"MeAccessoryDetailDisclosuerCell" forIndexPath:indexPath];
+                cell.textLabel.text = @"消息";
+                break;
+            case 2:
+                cell = [tableView dequeueReusableCellWithIdentifier:@"MeAccessoryDetailDisclosuerCell" forIndexPath:indexPath];
+                cell.textLabel.text = @"设置";
+                break;
+                
+            default:
+                break;
         }
-        
     }
     
-    //    switch ([indexPath section]) {
-    //        case 1:{
-    //            [[cell label1] setText:@"日程收藏"];
-    //        }
-    //
-    //            break;
-    //
-    //        case 2:{
-    //            //              [[cell imageView1] setImage:);
-    //            [[cell label1] setText:@"消息"];
-    //        }
-    //
-    //            break;
-    //        default:
-    //            //              [[cell imageView1] setImage:;
-    //            [[cell label1] setText:@"设置"];
-    //            break;
-    //    }
+    
+    // Configure the cell...
+    
     return cell;
-
 }
 
--(void)handleSingleTap:(UIGestureRecognizer *)gestureRecognizer{
-    NSLog(@"!@!@!@!@!@!@!@!@!@!@!@!@");
-    
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+-(void)headImageClick{
+    NSLog(@"headImageClick");
 }
 
--(void)singleTapOnGuanZhu:(UIGestureRecognizer *)gestureRecognizer{
-    NSLog(@"2232323232323");
-    
-    GuanZhuViewController *guanzhu = [[GuanZhuViewController alloc] init];
-    [self.navigationController pushViewController:guanzhu animated:true];
-    
-}
 
--(void)singleTapOnFenSi:(UIGestureRecognizer *)gestureRecognizer{
-    NSLog(@"777777777777");
-    
-    FenSiTableViewController *fensi = [[FenSiTableViewController alloc] init];
-    [self.navigationController pushViewController:fensi animated:true];
-    
-}
 
-//关键方法，获取复用的Cell后模拟赋值，然后取得Cell高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    //    if([indexPath section] == 0)
-    //        return cell.frame.size.height - 30;
-    return cell.frame.size.height;
-}
 
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //设置字体（不用了）
     //[self setFontFamily:@"FagoOfficeSans-Regular" forView:self.view andSubViews:YES];
     
@@ -64,7 +65,7 @@
     
     
     
-    #pragma mark 解决preferredStatusBarStyle不执行问题
+    #pragma mark 设置标题栏(最顶上那一条有信号什么的东西)&标题为白色
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     //设置日程列表
@@ -175,8 +176,10 @@
     printf("我要创建日程辣 ：）\n");
 }
 
-#pragma mark - 初始化导航
+#pragma mark - 初始化NaviItem
 -(void)initMyNaviItem{
+    //找导航栏背景请转DSNavigationBar
+    //导航栏在StoryBoard->navigationController->navigationBar
 //这是旧版本
 //    //today button
 //    UIButton *myTodayButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -456,11 +459,7 @@
 - (void)pushNewViewController:(UIViewController *)newViewController {
     [self.navigationController pushViewController:newViewController animated:YES];
 }
-#pragma mark - 设置标题栏为白色
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
+
 #pragma mark - 为整个App设置一个字体,但不指定字体大小的方法 （不用了）
 -(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews
 {
