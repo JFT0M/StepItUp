@@ -9,19 +9,22 @@
 #import "SomeThingNewViewController.h"
 #import "UIImageView+WebCache.h"
 
-@interface SomeThingNewViewController ()
+@interface SomeThingNewViewController () 
 
 @end
 
 @implementation SomeThingNewViewController
 NSMutableArray * ymDataArray;
 
+UITabBar *topBar;
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
+    
+    
 	self.title = @"DDRichText";
-	
-	
+
+    
 	//图片支持网络异步加载
 	NSMutableArray *_imageDataSource = [NSMutableArray arrayWithCapacity:0];
 	[_imageDataSource addObject:@"https://octodex.github.com/images/privateinvestocat.jpg"];
@@ -75,23 +78,27 @@ NSMutableArray * ymDataArray;
 }
 
 -(void)didPromulgatorNameOrHeadPicPressedForIndex:(NSInteger)index name:(NSString *)name{
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发布者回调" message:[NSString stringWithFormat:@"姓名：%@\n index：%d",name,index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"发布者回调" message:[NSString stringWithFormat:@"姓名：%@\n index：%ld",name,(long)index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	[alert show];
 }
 
 
 -(void)didRichTextPressedFromText:(NSString*)text index:(NSInteger)index{
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"正文富文本点击回调" message:[NSString stringWithFormat:@"点击的内容：%@\n index：%d",text,index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"正文富文本点击回调" message:[NSString stringWithFormat:@"点击的内容：%@\n index：%ld",text,(long)index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	[alert show];
 }
 
 -(void)didRichTextPressedFromText:(NSString *)text index:(NSInteger)index replyIndex:(NSInteger)replyIndex{
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"评论的富文本点击回调" message:[NSString stringWithFormat:@"点击的内容：%@\n index：%d \n replyIndex:%d",text,index,replyIndex] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"评论的富文本点击回调" message:[NSString stringWithFormat:@"点击的内容：%@\n index：%ld \n replyIndex:%ld",text,(long)index,(long)replyIndex] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	[alert show];
 }
 
+-(void)hideTopBar{
+    
+}
+
 -(void)replyForIndex:(NSInteger)index replyText:(NSString*)text{
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"回复的回调" message:[NSString stringWithFormat:@"回复的内容：%@\n index：%d",text,index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"回复的回调" message:[NSString stringWithFormat:@"回复的内容：%@\n index：%ld",text,(long)index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	[alert show];
 }
 

@@ -27,19 +27,56 @@
 @property BOOL hideReply;
 
 
-//界面
+//----- 界面------//
+
+
+/**
+ 头像
+ */
 @property (nonatomic,strong) UIImageView * headerImage;
+
+/**
+ 用户名
+ */
 @property(nonatomic , strong)UILabel *nameLbl;
+
+/**
+ 时间戳
+ */
 @property(nonatomic,strong)UILabel *introLbl;
+
+/**
+ 折叠按钮
+ */
 @property(nonatomic,strong)UIButton *foldBtn;
+
+/**
+ 评论按钮
+ */
 @property(nonatomic,strong)UIImageView *replyImageView;
 
-//数据
+//----- 数据------//
+
+/**
+ 图片数据
+ */
 @property (nonatomic,strong) NSMutableArray * imageArray;
+
+/**
+ 动态内容
+ */
 @property (nonatomic,strong) NSMutableArray * ymTextArray;
+
+/**
+ 评论内容
+ */
 @property (nonatomic,strong) NSMutableArray * ymShuoshuoArray;
 @property (nonatomic,assign) id<cellDelegate> delegate;
 @property (nonatomic,assign) NSInteger stamp;
+
+/**
+ “发表”按钮
+ */
 @property (nonatomic,strong) YMButton *replyBtn;
 
 - (YMTextData*)getYMTextData;
