@@ -80,8 +80,11 @@ class DiscoverViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         if indexPath.row == 0 && indexPath.section == 0{
             self.performSegueWithIdentifier(SomethingNewIdentifier, sender: self)
-        }else {
-            println("row is:%d , section is :%d",indexPath.row,indexPath.section)
+        }else if indexPath.row == 0 && indexPath.section == 1{
+            self.performSegueWithIdentifier("SomethingNewIdentifier", sender: self)
+        }
+        else {
+            NSLog("row is:%D , section is :%D",indexPath.row,indexPath.section)
         }
     }
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{

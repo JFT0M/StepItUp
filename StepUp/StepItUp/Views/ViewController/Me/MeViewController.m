@@ -11,6 +11,8 @@
 #import "FollowerCell.h"
 #import "MeAccessoryDetailDisclosuerCell.h"
 
+
+
 #define FontSize 23.0f
 @interface MeViewController ()
 
@@ -33,6 +35,8 @@
 
     //这句话可以隐藏下面没有的分割线
     self.tableView.tableFooterView = [[UIView alloc]init];
+    
+
 
 }
 #pragma mark - 初始化NaviItem
