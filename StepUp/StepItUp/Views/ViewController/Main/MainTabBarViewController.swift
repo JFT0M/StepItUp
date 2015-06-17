@@ -27,22 +27,22 @@ class MainTabBarViewController: UITabBarController {
     func loadAllViewController(){
         
         
-        var planViewController = UIStoryboard(name: "SIUToDoSB", bundle: nil).instantiateInitialViewController() as UITabBarController
+        var planViewController = UIStoryboard(name: "SIUToDoSB", bundle: nil).instantiateInitialViewController() as! UITabBarController
         planViewController.tabBarItem.image = UIImage(named: "multiply_button__calendar")
         planViewController.tabBarItem.title = "日程"
         
         
-        var GroupViewController = UIStoryboard(name: "SIUGroupSB", bundle: nil).instantiateInitialViewController() as UINavigationController
+        var GroupViewController = UIStoryboard(name: "SIUGroupSB", bundle: nil).instantiateInitialViewController() as! UINavigationController
         GroupViewController.tabBarItem.image = UIImage(named: "multiply_button__group")
         GroupViewController.tabBarItem.title = "群组"
         
         
         
-        var dynamicViewController = UIStoryboard(name: "SIUDiscoverSB", bundle: nil).instantiateInitialViewController() as UINavigationController
+        var dynamicViewController = UIStoryboard(name: "SIUDiscoverSB", bundle: nil).instantiateInitialViewController() as! UINavigationController
         dynamicViewController.tabBarItem.image = UIImage(named: "multiply_button__find")
         dynamicViewController.tabBarItem.title = "发现"
         
-        var meViewController = UIStoryboard(name: "SIUMeSB", bundle: nil).instantiateInitialViewController() as UINavigationController
+        var meViewController = UIStoryboard(name: "SIUMeSB", bundle: nil).instantiateInitialViewController() as! UINavigationController
         meViewController.tabBarItem.image = UIImage(named: "multiply_button__personal")
         meViewController.tabBarItem.title = "账号"
         

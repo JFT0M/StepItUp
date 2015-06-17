@@ -17,7 +17,7 @@ class GroupCell: UITableViewCell {
         
     }
     class func createGroupCell() -> GroupCell{
-        let cell = (NSBundle.mainBundle().loadNibNamed("GroupCell", owner: self, options: nil) as NSArray).objectAtIndex(0) as GroupCell
+        let cell = (NSBundle.mainBundle().loadNibNamed("GroupCell", owner: self, options: nil) as NSArray).objectAtIndex(0) as! GroupCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }

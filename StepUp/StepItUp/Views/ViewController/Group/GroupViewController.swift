@@ -92,7 +92,7 @@ class GroupViewController: UITableViewController {
             if  cell == nil {
                 cell = GroupCell.createGroupCell()
             }
-            cell!.GroupName.text = cellDate[indexPath.row] as NSString
+            cell!.GroupName.text = cellDate[indexPath.row] as! NSString as String
             return cell!
         }else{
             var cell = tableView.dequeueReusableCellWithIdentifier("groupCell") as? UITableViewCell
@@ -100,7 +100,7 @@ class GroupViewController: UITableViewController {
                 cell = UITableViewCell()
             }
             cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            cell!.textLabel.text = "群组动态"
+            cell!.textLabel!.text = "群组动态"
             return cell!
         }
 

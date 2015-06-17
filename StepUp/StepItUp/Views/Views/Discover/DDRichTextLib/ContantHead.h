@@ -13,13 +13,15 @@
 #define kLocationToBottom 20
 
 #define TableHeader 50
+#define ShowImage_W 80
 #define ShowImage_H 80
 #define PlaceHolder @" "
-#define offSet_X 20
+#define offSet_X 80
+#define replySet_X 10  //评论按钮距离屏幕右侧的距离
 #define EmotionItemPattern    @"\\[em:(\\d+):\\]"
 #define NamePattern @"@\\w*\\s|@\\w*:|@\\w*：" //只能匹配 @姓名 @姓名: @姓名：  姓名只能使用数字、字母、下划线、汉字
 
-#define kDistance 20 //说说和图片的间隔
+#define kDistance 0 //说说和图片的间隔
 #define kReplyBtnDistance 30 //回复按钮距离
 #define AttributedImageNameKey      @"ImageName"
 
