@@ -72,8 +72,8 @@ class DiscoverViewController: UITableViewController {
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         let titleName = dataArray[indexPath.section][indexPath.row]
         let imageName = dataKeyValue[titleName]
-        cell.textLabel.text = titleName
-        cell.imageView.image = UIImage(named: imageName!)
+        cell.textLabel!.text = titleName
+        cell.imageView!.image = UIImage(named: imageName!)
         return cell
     }
     

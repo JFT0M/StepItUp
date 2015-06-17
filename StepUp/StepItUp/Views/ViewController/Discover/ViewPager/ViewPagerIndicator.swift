@@ -79,7 +79,7 @@ public class ViewPagerIndicator: UIControl {
         for (var index = 0;index < buttons.count; index++ ){
             let left = roundf((Float(self.bounds.size.width)/Float(self.buttons.count)) * Float(index))
             let width = roundf(Float(self.bounds.size.width)/Float(self.buttons.count))
-            let button = buttons[index] as UIButton
+            let button = buttons[index] as! UIButton
             button.frame = CGRectMake(CGFloat(left), 0, CGFloat(width),self.bounds.size.height)
             button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, -4, 0)
             button.titleLabel?.font = titleFont
@@ -166,7 +166,7 @@ public class ViewPagerIndicator: UIControl {
         isTransitioning = true
         delegate?.indicatorChange(indicatorIndex)//通知代理
         
-        let button = buttons[index] as UIButton
+        let button = buttons[index] as! UIButton
         button.selected = true
         var damping: CGFloat = !bouncySelectionIndicator ? 0 : 0.6
         var velocity: CGFloat = !bouncySelectionIndicator ? 0 : 0.5
@@ -247,12 +247,12 @@ public class ViewPagerIndicator: UIControl {
     }
     func disableAllButtonsSelection(){
         for button in buttons {
-            (button as UIButton).selected = false
+            (button as! UIButton).selected = false
         }
     }
     func enableAllButtonsInteraction(enable: Bool){
         for button in buttons {
-            (button as UIButton).userInteractionEnabled = enable
+            (button as! UIButton).userInteractionEnabled = enable
         }
     }
     

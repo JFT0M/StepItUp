@@ -46,12 +46,12 @@
 @property(nonatomic,strong)UILabel *introLbl;
 
 /**
- 折叠按钮
+ 展开/收起按钮
  */
 @property(nonatomic,strong)UIButton *foldBtn;
 
 /**
- 评论按钮
+ 下方评论背景（灰色那个）
  */
 @property(nonatomic,strong)UIImageView *replyImageView;
 
@@ -75,9 +75,14 @@
 @property (nonatomic,assign) NSInteger stamp;
 
 /**
- “发表”按钮
+ 评论按钮
  */
 @property (nonatomic,strong) YMButton *replyBtn;
+
+/**
+ 点赞按钮
+ */
+@property (nonatomic,strong) YMButton *likeBtn;
 
 - (YMTextData*)getYMTextData;
 

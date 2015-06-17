@@ -72,7 +72,7 @@ class ViewPagerController: UIViewController ,ViewPagerIndicatorDelegate,UIScroll
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell = UITableViewCell()
-        cell.textLabel.text = NSString(format: "%d", indexPath.row)
+        cell.textLabel!.text = NSString(format: "%d", indexPath.row) as String
         return cell
     }
 
